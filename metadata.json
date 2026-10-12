@@ -1,0 +1,6 @@
+{
+  "name": "Global Forte - Next-Gen IT & Consulting",
+  "description": "Modern enterprise technology infrastructure, cybersecurity, intelligent surveillance, and strategic IT consulting for Global Forte.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
