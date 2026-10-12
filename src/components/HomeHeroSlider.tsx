@@ -63,7 +63,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
         'Türkiye genelinde emniyet müdürlükleri, havalimanları ve kritik tesislerde kullanılan Digifort Enterprise VMS, yüksek hızlı yapay zeka destekli plaka tanıma (Neural LPR) ve adli video arama motorları.',
       descEn:
         'Digifort Enterprise VMS and Neural LPR plate recognition engines deployed across regional law enforcement, international airports, and mission-critical government perimeters.',
-      image: '/images/news/city-surveillance-projects-minister.jpg',
+      image: './images/news/city-surveillance-projects-minister.jpg',
       targetBrand: 'digifort',
       targetCategory: 'video',
       featuredProductId: 'digifort-enterprise',
@@ -87,7 +87,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
         'Petrol/doğalgaz hatları, akıllı ulaşım, MOBESE ve telekom operatörleri için zorlu arazi koşullarında 50+ km mesafeye kadar kesintisiz, sanal fiber optik kalitesinde yüksek hızlı kablosuz iletişim altyapısı.',
       descEn:
         'Long-range carrier-grade broadband wireless, virtual fiber PTP/PMP connectivity up to 50+ km, and tactical ruggedized base stations under mission-critical conditions.',
-      image: '/images/partners/redline/rdl-3000-enterprise-new.jpg',
+      image: './images/partners/redline/rdl-3000-enterprise-new.jpg',
       targetBrand: 'redline',
       targetCategory: 'wireless',
       featuredProductId: 'redline-rdl3000',
@@ -111,7 +111,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
         'Finansal işlemler, e-İmza, PKI ve kurumsal veri tabanı korumasında dünya standardı SafeNet Luna SA Network HSM ve PCIe hızlandırıcı kart ailesiyle tam donanımsal anahtar koruması.',
       descEn:
         'Global benchmark SafeNet Luna SA Network HSMs providing tamper-resistant key isolation for central banking, e-signatures, PKI roots, and TLS acceleration.',
-      image: '/images/news/safenet-hsms-new.jpg',
+      image: './images/news/safenet-hsms-new.jpg',
       targetBrand: 'safenet',
       targetCategory: 'hsm',
       featuredProductId: 'safenet-luna-sa',
@@ -135,7 +135,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
         'SafeNet eToken 5100, eToken PRO, MobilePASS ve akıllı kart aileleriyle uzaktan erişim, VPN ve kurumsal ağlarda yetkisiz erişim risklerini sıfıra indiren donanımsal kimlik doğrulama.',
       descEn:
         'SafeNet eToken 5100, eToken PRO, MobilePASS OTP and JavaCard authenticators eliminating credential breach vulnerabilities across hybrid enterprise perimeters.',
-      image: '/images/news/safenet-multi-factor.jpg',
+      image: './images/news/safenet-multi-factor.jpg',
       targetBrand: 'safenet',
       targetCategory: 'token',
       featuredProductId: 'safenet-etoken-5110',
@@ -159,7 +159,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
         'Savunma sanayii, enerji iletim hatları, finans kuruluşları ve telekomünikasyon operatörleri için taşıyıcı sınıfı kablosuz ağlar, hat içi şifreleyiciler ve 7/24 kurumsal destek.',
       descEn:
         'High-reliability carrier-grade wireless links, NSA Suite B inline encryptors, and tier-3 security infrastructure designed for mission-critical deployments.',
-      image: '/images/news/4-pic-banner-new.jpg',
+      image: './images/news/4-pic-banner-new.jpg',
       targetBrand: 'fortress',
       targetCategory: 'crypto',
       featuredProductId: 'fortress-fcx',
@@ -324,7 +324,7 @@ export const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({
                   className="w-full h-full object-contain rounded-xl transform transition-transform duration-500 group-hover/box:scale-102"
                   onError={(e) => {
                     // Fallback to partner logo if image path error
-                    (e.target as HTMLImageElement).src = '/images/mainlogo.png';
+                    (e.target as HTMLImageElement).src = './images/mainlogo.png';
                   }}
                 />
 
