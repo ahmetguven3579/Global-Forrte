@@ -2474,7 +2474,39 @@ export const PRODUCTS_CATALOG: Product[] = [
       environmentalSpecs: [{ key: 'Operating Temp', value: '-35°C to +65°C' }],
     },
   },
-  {
+ {
     id: 'gf-itil-cobit-audit',
     imageUrl: './images/mainlogo.png',
     name: 'Global Forte ITIL / COBIT / ISO 27001 Kurumsal Danışmanlık',
+    brandId: 'globalforte',
+    brandName: 'Global Forte Mühendislik',
+    categoryTr: 'Stratejik BT Yönetişimi & Denetim',
+    categoryEn: 'IT Governance & Strategic Advisory',
+    summaryTr:
+      'C-seviye yöneticiler için bağımsız kurumsal mimari tasarımı, ERP değerlendirme denetimleri, ISO 27001 BGYS kurulumu ve uluslararası teknoloji tedarik danışmanlığı.',
+    summaryEn:
+      'Senior executive enterprise architecture, ERP vendor audit, ISO 27001 ISMS certification, and international procurement advisory.',
+    specs: [
+      { labelTr: 'Metodolojiler', labelEn: 'Frameworks', val: 'TOGAF 10, COBIT 2019, ITIL v4, ISO 27001, CMMI' },
+      { labelTr: 'Danışman Kadrosu', labelEn: 'Team', val: 'Sertifikalı Baş Denetçiler ve Kurumsal Mimarlar' },
+      { labelTr: 'Kapsam', labelEn: 'Scope', val: 'Türkiye, EMEA, Körfez Bölgesi ve Orta Asya' },
+      { labelTr: 'Çıktılar', labelEn: 'Deliverables', val: 'Mevcut Durum Analizi, Şartname (RFP), Güvenlik Politikaları' },
+    ],
+    compliance: ['ISO 27001', 'ISO 9001', 'ISO 10002', 'TSE-HYB Belgesi'],
+    datasheetContent: {
+      partNumber: 'GF-CONSULTING-PRACTICE',
+      version: '2026 Edition',
+      descriptionTr:
+        'Teknoloji yatırımlarının kurumsal hedeflerle tam örtüşmesini sağlayan, sağlayıcıdan bağımsız tarafsız mühendislik ve stratejik danışmanlık hizmet paketi.',
+      descriptionEn:
+        'Vendor-neutral strategic consulting aligning technology investments with business objectives and regulatory compliance.',
+      technicalOverviewTr:
+        'ERP projelerinden siber güvenlik omurgalarına kadar milyonlarca dolarlık ihalelerin teknik şartnamelerini oluşturur ve sağlayıcı tekliflerini denetler.',
+      technicalOverviewEn:
+        'Drafts technical tender specifications and audits vendor RFP submissions for multi-million-dollar programs.',
+      electricalSpecs: [{ key: 'Methodology', value: 'TOGAF 10 Enterprise Continuum' }],
+      physicalSpecs: [{ key: 'Practice Locations', value: 'İstanbul Mecidiyeköy Genel Merkez' }],
+      environmentalSpecs: [{ key: 'Compliance Rate', value: '100% Audit Success Rate' }],
+    },
+  },
+];
