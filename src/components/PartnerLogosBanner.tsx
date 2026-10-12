@@ -25,7 +25,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             {/* ISO 9001 Badge */}
             <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-2xs">
               <img
-                src="/images/certificates/iso9001.png"
+                src="./images/certificates/iso9001.png"
                 alt="ISO 9001"
                 className="h-8 w-auto object-contain"
               />
@@ -38,7 +38,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             {/* TSE-HYB Badge */}
             <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-red-200 shadow-2xs">
               <img
-                src="/images/certificates/tsehyb.png"
+                src="./images/certificates/tsehyb.png"
                 alt="TSE-HYB"
                 className="h-8 w-auto object-contain"
               />
@@ -51,7 +51,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             {/* ISO 10002 Badge */}
             <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-2xs">
               <img
-                src="/images/certificates/iso10002.png"
+                src="./images/certificates/iso10002.png"
                 alt="ISO 10002"
                 className="h-8 w-auto object-contain"
               />
@@ -64,7 +64,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             {/* ISO 27001 Badge */}
             <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-slate-200 shadow-2xs">
               <img
-                src="/images/certificates/iso27001.png"
+                src="./images/certificates/iso27001.png"
                 alt="ISO 27001"
                 className="h-8 w-auto object-contain"
               />
@@ -92,7 +92,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/mainlogo.png"
+                  src="./images/mainlogo.png"
                   alt="Global Forte"
                   className="max-h-8 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -107,7 +107,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/redline/logo.jpg"
+                  src="./images/partners/redline/logo.jpg"
                   alt="Redline Communications"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -122,7 +122,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/digifort/logo.png"
+                  src="./images/partners/digifort/logo.png"
                   alt="Digifort"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -137,7 +137,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/safenet/logo.png"
+                  src="./images/partners/safenet/logo.png"
                   alt="SafeNet"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -152,7 +152,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/fortress/logo.jpg"
+                  src="./images/partners/fortress/logo.jpg"
                   alt="Fortress Technologies"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -167,7 +167,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/spyrus/logo.gif"
+                  src="./images/partners/spyrus/logo.gif"
                   alt="SPYRUS"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
@@ -182,7 +182,7 @@ export const PartnerLogosBanner: React.FC<PartnerLogosBannerProps> = ({
             >
               <div className="h-9 w-full flex items-center justify-center">
                 <img
-                  src="/images/partners/cryptomathic/logo.gif"
+                  src="./images/partners/cryptomathic/logo.gif"
                   alt="Cryptomathic"
                   className="max-h-7 max-w-[85%] object-contain filter group-hover:scale-105 transition-transform"
                 />
