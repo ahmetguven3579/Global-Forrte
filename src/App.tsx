@@ -22,45 +22,58 @@ export default function App() {
   // Animasyon state'leri
   const [showIntro, setShowIntro] = useState<boolean>(true);
   const [fadeAnim, setFadeAnim] = useState<boolean>(false);
-  const [displayedText, setDisplayedText] = useState<string>('');
-  const fullText = 'Global Forte';
+  const [displayedGlobal, setDisplayedGlobal] = useState<string>('');
+  const [displayedForte, setDisplayedForte] = useState<string>('');
+  
+  const targetGlobal = 'Global';
+  const targetForte = 'Forte';
 
-  // Daktilo efekti
+  // Daktilo efekti (Önce Global, sonra Forte yazılır)
   useEffect(() => {
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index <= fullText.length) {
-        setDisplayedText(fullText.slice(0, index));
-        index++;
+    let globalIndex = 0;
+    let forteIndex = 0;
+
+    const globalInterval = setInterval(() => {
+      if (globalIndex <= targetGlobal.length) {
+        setDisplayedGlobal(targetGlobal.slice(0, globalIndex));
+        globalIndex++;
       } else {
-        clearInterval(typingInterval);
+        clearInterval(globalInterval);
+        
+        // Global bittikten sonra Forte başlasın
+        const forteInterval = setInterval(() => {
+          if (forteIndex <= targetForte.length) {
+            setDisplayedForte(targetForte.slice(0, forteIndex));
+            forteIndex++;
+          } else {
+            clearInterval(forteInterval);
+          }
+        }, 120);
       }
     }, 120);
 
     const timer1 = setTimeout(() => {
       setFadeAnim(true);
-    }, 3500);
+    }, 3800);
 
     const timer2 = setTimeout(() => {
       setShowIntro(false);
-    }, 4500);
+    }, 4600);
 
     return () => {
-      clearInterval(typingInterval);
+      clearInterval(globalInterval);
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
   }, []);
 
-  // Ekrana tıklandığında introyu anında geçme fonksiyonu
+  // Ekrana herhangi bir yere tıklandığında introyu anında geçme
   const handleSkipIntro = () => {
     setFadeAnim(true);
     setTimeout(() => {
       setShowIntro(false);
     }, 500);
   };
-
-  const darkRed = '#8B0000';
 
   const handleNavigate = (
     page: PageId,
@@ -106,7 +119,7 @@ export default function App() {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* İNTRO / SİNEMATİK PERDE (Tıklayınca geçilir + Işık parçacıkları var) */}
+      {/* SİNEMATİK PERDE (Tıklayınca geçer, yazısız ve canlı geçişli) */}
       {showIntro && (
         <div 
           onClick={handleSkipIntro}
@@ -114,27 +127,25 @@ export default function App() {
             fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
           }`}
           style={{ 
-            background: `linear-gradient(135deg, ${darkRed} 0%, #ffffff 100%)`
+            background: 'linear-gradient(135deg, #8B0000 0%, #ff4d4d 50%, #ffffff 100%)'
           }}
         >
-          {/* Arkada süzülen hafif ışık parçacıkları (Particles efekti) */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
-            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500 rounded-full blur-3xl animate-ping" style={{ animationDuration: '4s' }}></div>
+          {/* Arkada daha belirgin ve canlı hareket eden ışık süzümleri */}
+          <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
+            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-red-600 rounded-full blur-[100px] animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-[30rem] h-[30rem] bg-white rounded-full blur-[120px] animate-ping" style={{ animationDuration: '5s' }}></div>
           </div>
 
-          {/* Daktilo Yazısı */}
+          {/* Global (Siyah) & Forte (Kırmızı) Yazı Alanı */}
           <div className="text-center z-10 px-4 transition-all duration-1000 transform">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl font-mono">
-              {displayedText}
-              <span className="animate-pulse text-red-300">_</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-wider drop-shadow-2xl font-mono flex items-center justify-center gap-3">
+              <span className="text-black">{displayedGlobal}</span>
+              <span className="text-[#8B0000]">{displayedForte}</span>
+              <span className="animate-pulse text-white">_</span>
             </h1>
-            <p className="text-white text-sm md:text-base mt-4 tracking-[0.3em] uppercase opacity-90 font-medium">
+            <p className="text-white text-sm md:text-base mt-4 tracking-[0.3em] uppercase opacity-95 font-semibold drop-shadow-md">
               Information Technologies & Consultancy Inc.
             </p>
-            <span className="inline-block mt-8 text-xs text-white/70 tracking-widest uppercase border border-white/30 px-4 py-2 rounded-full animate-bounce">
-              Geçmek için ekrana tıkla [Skip]
-            </span>
           </div>
         </div>
       )}
