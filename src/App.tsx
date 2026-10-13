@@ -119,7 +119,7 @@ export default function App() {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* SİNEMATİK PERDE (Tıklayınca geçer, gölgeli Forte yazısı ile) */}
+      {/* SİNEMATİK PERDE (Tıklayınca geçer, HEM GLOBAL HEM FORTE GÖLGELİ) */}
       {showIntro && (
         <div 
           onClick={handleSkipIntro}
@@ -136,10 +136,20 @@ export default function App() {
             <div className="absolute bottom-1/3 right-1/4 w-[30rem] h-[30rem] bg-white rounded-full blur-[120px] animate-ping" style={{ animationDuration: '5s' }}></div>
           </div>
 
-          {/* Global (Siyah) & Forte (Gölge efektiyle belirginleşen Kırmızı) Yazı Alanı */}
+          {/* Global (Gölge efektli Siyah) & Forte (Gölge efektli Kırmızı) Yazı Alanı */}
           <div className="text-center z-10 px-4 transition-all duration-1000 transform">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-wider drop-shadow-2xl font-mono flex items-center justify-center gap-3">
-              <span className="text-black">{displayedGlobal}</span>
+              {/* GLOBAL YAZISI - GÖLGELİ */}
+              <span 
+                className="text-black"
+                style={{ 
+                  filter: 'drop-shadow(0 2px 0 rgba(255,255,255,0.9)) drop-shadow(0 4px 6px rgba(0,0,0,0.6))' 
+                }}
+              >
+                {displayedGlobal}
+              </span>
+              
+              {/* FORTE YAZISI - GÖLGELİ */}
               <span 
                 className="text-[#8B0000]" 
                 style={{ 
