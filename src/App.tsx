@@ -58,7 +58,10 @@ export default function App() {
   return (
     <div 
       className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden"
-      style={{ background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)' }}
+      style={{ 
+        background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
+        backgroundAttachment: 'fixed'
+      }}
     >
       {/* Top Header with Multi-Page Navigation, Global Search Bar & Quick Categories Bar */}
       <Header
