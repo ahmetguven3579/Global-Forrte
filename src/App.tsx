@@ -56,7 +56,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden">
+    <div 
+      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden"
+      style={{ background: 'linear-gradient(90deg, #e30613 50%, #ffffff 50%)' }}
+    >
       {/* Top Header with Multi-Page Navigation, Global Search Bar & Quick Categories Bar */}
       <Header
         activePage={activePage}
