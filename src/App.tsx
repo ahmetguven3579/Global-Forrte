@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header.tsx';
 import { Footer } from './components/Footer.tsx';
 import { HomePage } from './pages/HomePage.tsx';
@@ -18,6 +18,27 @@ export default function App() {
   const [searchQueryForProducts, setSearchQueryForProducts] = useState<string>('');
   const [datasheetProduct, setDatasheetProduct] = useState<Product | null>(null);
   const [lang, setLang] = useState<Lang>('TR');
+  
+  // Animasyonun kontrolü için state
+  const [showIntro, setShowIntro] = useState<boolean>(true);
+  const [fadeAnim, setFadeAnim] = useState<boolean>(false);
+
+  useEffect(() => {
+    // 2 saniye sonra fade (solarak kaybolma) başlasın
+    const timer1 = setTimeout(() => {
+      setFadeAnim(true);
+    }, 2000);
+
+    // 2.8 saniye sonra intro tamamen DOM'dan kalksın
+    const timer2 = setTimeout(() => {
+      setShowIntro(false);
+    }, 2800);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
 
   const handleNavigate = (
     page: PageId,
@@ -57,12 +78,33 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden"
+      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
       style={{ 
         background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
         backgroundAttachment: 'fixed'
       }}
     >
+      {/* İLK AÇILIŞ ANİMASYONU (SPLASH SCREEN) */}
+      {showIntro && (
+        <div 
+          className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ${
+            fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
+          }`}
+          style={{ 
+            background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)' 
+          }}
+        >
+          <div className="text-center transition-all duration-700 transform">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl">
+              Global Forte
+            </h1>
+            <p className="text-white text-sm md:text-base mt-3 tracking-[0.3em] uppercase opacity-90 font-medium">
+              Information Technologies & Consultancy Inc.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Top Header with Multi-Page Navigation, Global Search Bar & Quick Categories Bar */}
       <Header
         activePage={activePage}
