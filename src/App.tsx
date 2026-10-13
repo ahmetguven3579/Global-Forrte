@@ -25,7 +25,7 @@ export default function App() {
   const [displayedText, setDisplayedText] = useState<string>('');
   const fullText = 'Global Forte';
 
-  // Daktilo efekti (Harf harf yazılma)
+  // Daktilo efekti
   useEffect(() => {
     let index = 0;
     const typingInterval = setInterval(() => {
@@ -35,14 +35,12 @@ export default function App() {
       } else {
         clearInterval(typingInterval);
       }
-    }, 120); // Her harfin yazılma hızı
+    }, 120);
 
-    // 3.5 saniye sonra solarak kaybolma başlasın
     const timer1 = setTimeout(() => {
       setFadeAnim(true);
     }, 3500);
 
-    // 4.5 saniye sonra intro tamamen kalksın
     const timer2 = setTimeout(() => {
       setShowIntro(false);
     }, 4500);
@@ -53,6 +51,14 @@ export default function App() {
       clearTimeout(timer2);
     };
   }, []);
+
+  // Ekrana tıklandığında introyu anında geçme fonksiyonu
+  const handleSkipIntro = () => {
+    setFadeAnim(true);
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 500);
+  };
 
   const darkRed = '#8B0000';
 
@@ -100,25 +106,35 @@ export default function App() {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* SİNEMATİK SÜPER İNTRO PERDESİ */}
+      {/* İNTRO / SİNEMATİK PERDE (Tıklayınca geçilir + Işık parçacıkları var) */}
       {showIntro && (
         <div 
-          className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-1000 ease-in-out ${
+          onClick={handleSkipIntro}
+          className={`fixed inset-0 z-50 flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all duration-700 ease-in-out ${
             fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
           }`}
           style={{ 
             background: `linear-gradient(135deg, ${darkRed} 0%, #ffffff 100%)`
           }}
         >
-          <div className="text-center transition-all duration-1000 transform px-4">
-            {/* Daktilo Efektli Başlık */}
+          {/* Arkada süzülen hafif ışık parçacıkları (Particles efekti) */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500 rounded-full blur-3xl animate-ping" style={{ animationDuration: '4s' }}></div>
+          </div>
+
+          {/* Daktilo Yazısı */}
+          <div className="text-center z-10 px-4 transition-all duration-1000 transform">
             <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl font-mono">
               {displayedText}
               <span className="animate-pulse text-red-300">_</span>
             </h1>
-            <p className="text-white text-sm md:text-base mt-4 tracking-[0.3em] uppercase opacity-90 font-medium animate-fade-in">
+            <p className="text-white text-sm md:text-base mt-4 tracking-[0.3em] uppercase opacity-90 font-medium">
               Information Technologies & Consultancy Inc.
             </p>
+            <span className="inline-block mt-8 text-xs text-white/70 tracking-widest uppercase border border-white/30 px-4 py-2 rounded-full animate-bounce">
+              Geçmek için ekrana tıkla [Skip]
+            </span>
           </div>
         </div>
       )}
