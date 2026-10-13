@@ -19,30 +19,42 @@ export default function App() {
   const [datasheetProduct, setDatasheetProduct] = useState<Product | null>(null);
   const [lang, setLang] = useState<Lang>('TR');
   
-  // Animasyonun kontrolü için state
+  // Animasyon state'leri
   const [showIntro, setShowIntro] = useState<boolean>(true);
   const [fadeAnim, setFadeAnim] = useState<boolean>(false);
+  const [displayedText, setDisplayedText] = useState<string>('');
+  const fullText = 'Global Forte';
 
+  // Daktilo efekti (Harf harf yazılma)
   useEffect(() => {
-    // 3 saniye sonra fade (solarak kaybolma) başlasın (Daha Yavaş)
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index <= fullText.length) {
+        setDisplayedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 120); // Her harfin yazılma hızı
+
+    // 3.5 saniye sonra solarak kaybolma başlasın
     const timer1 = setTimeout(() => {
       setFadeAnim(true);
-    }, 3000);
+    }, 3500);
 
-    // 4 saniye sonra intro tamamen DOM'dan kalksın (Daha Yavaş)
+    // 4.5 saniye sonra intro tamamen kalksın
     const timer2 = setTimeout(() => {
       setShowIntro(false);
-    }, 4000);
+    }, 4500);
 
     return () => {
+      clearInterval(typingInterval);
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
   }, []);
 
-  // Daha koyu ve prestijli kırmızı tonu (Örn: #8B0000 - Koyu Kırmızı / Bordo)
   const darkRed = '#8B0000';
-  const introGradient = `linear-gradient(135deg, ${darkRed} 0%, #ffffff 100%)`;
 
   const handleNavigate = (
     page: PageId,
@@ -84,26 +96,27 @@ export default function App() {
     <div 
       className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
       style={{ 
-        // Sitenin asıl arka planı (eski usul kırmızı)
         background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* İLK AÇILIŞ ANİMASYONU (SPLASH SCREEN) - KOYU KIRMIZI VE YAVAŞ */}
+      {/* SİNEMATİK SÜPER İNTRO PERDESİ */}
       {showIntro && (
         <div 
           className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-1000 ease-in-out ${
             fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
           }`}
           style={{ 
-            background: introGradient
+            background: `linear-gradient(135deg, ${darkRed} 0%, #ffffff 100%)`
           }}
         >
-          <div className="text-center transition-all duration-1000 transform">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl">
-              Global Forte
+          <div className="text-center transition-all duration-1000 transform px-4">
+            {/* Daktilo Efektli Başlık */}
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl font-mono">
+              {displayedText}
+              <span className="animate-pulse text-red-300">_</span>
             </h1>
-            <p className="text-white text-sm md:text-base mt-3 tracking-[0.3em] uppercase opacity-90 font-medium">
+            <p className="text-white text-sm md:text-base mt-4 tracking-[0.3em] uppercase opacity-90 font-medium animate-fade-in">
               Information Technologies & Consultancy Inc.
             </p>
           </div>
