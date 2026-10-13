@@ -24,21 +24,25 @@ export default function App() {
   const [fadeAnim, setFadeAnim] = useState<boolean>(false);
 
   useEffect(() => {
-    // 2 saniye sonra fade (solarak kaybolma) başlasın
+    // 3 saniye sonra fade (solarak kaybolma) başlasın (Daha Yavaş)
     const timer1 = setTimeout(() => {
       setFadeAnim(true);
-    }, 2000);
+    }, 3000);
 
-    // 2.8 saniye sonra intro tamamen DOM'dan kalksın
+    // 4 saniye sonra intro tamamen DOM'dan kalksın (Daha Yavaş)
     const timer2 = setTimeout(() => {
       setShowIntro(false);
-    }, 2800);
+    }, 4000);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
     };
   }, []);
+
+  // Daha koyu ve prestijli kırmızı tonu (Örn: #8B0000 - Koyu Kırmızı / Bordo)
+  const darkRed = '#8B0000';
+  const introGradient = `linear-gradient(135deg, ${darkRed} 0%, #ffffff 100%)`;
 
   const handleNavigate = (
     page: PageId,
@@ -80,21 +84,22 @@ export default function App() {
     <div 
       className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
       style={{ 
+        // Sitenin asıl arka planı (eski usul kırmızı)
         background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* İLK AÇILIŞ ANİMASYONU (SPLASH SCREEN) */}
+      {/* İLK AÇILIŞ ANİMASYONU (SPLASH SCREEN) - KOYU KIRMIZI VE YAVAŞ */}
       {showIntro && (
         <div 
-          className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ${
+          className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-1000 ease-in-out ${
             fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
           }`}
           style={{ 
-            background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)' 
+            background: introGradient
           }}
         >
-          <div className="text-center transition-all duration-700 transform">
+          <div className="text-center transition-all duration-1000 transform">
             <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-wider drop-shadow-2xl">
               Global Forte
             </h1>
