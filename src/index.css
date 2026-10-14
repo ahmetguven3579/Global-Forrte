@@ -13,10 +13,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 1. Sitenin kök zeminine o muazzam gradient'i sabitliyoruz */
 body {
   font-family: var(--font-sans);
   color: #0f172a;
-  /* Sol üstten sağ alta muazzam kırmızı-beyaz geçiş ve ekrana çivileme */
   background: linear-gradient(135deg, #e30613 0%, #ffffff 100%) !important;
   background-attachment: fixed !important;
   min-height: 100vh;
@@ -24,9 +24,19 @@ body {
   padding: 0;
 }
 
-/* Sayfadaki ana kapsayıcıların arkadaki gradient'i yutmasını engellemek için şeffaflık veriyoruz */
-#root, main {
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: transparent !important;
+}
+
+/* 2. Beyazlık kusan ana bileşen kutularını zorla yarı şeffaf/transparan yapıyoruz 
+   Böylece yazılar okunur kalıyor ama arkadaki kırmızı-beyaz akışkanlık her yerden parlıyor */
+main div[class*="bg-white"], 
+main section {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(8px);
 }
 
 h1, h2, h3, h4, h5, h6 {
