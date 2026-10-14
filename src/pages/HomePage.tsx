@@ -28,7 +28,6 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet, lang }) => {
   const isTr = lang === 'TR';
 
-  // The 5 Core Domain Areas from the original Global Forte website architecture
   const coreDomains = [
     {
       id: 'kablosuz',
@@ -41,7 +40,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Carrier-grade PTP & PMP wireless infrastructure, Redline virtual fiber optic links, and Fortress tactical military communications.',
       icon: Wifi,
-      accent: 'text-red-700 bg-red-50/90 border-red-200',
+      accent: 'text-red-700 bg-red-500/10 border-red-200/50',
       brand: 'redline',
       tags: ['RDL-3000 XP', 'AN-80i (50+ km)', 'Taktik Mesh', 'WiMAX'],
     },
@@ -56,7 +55,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'FIPS 140-2 Level 3 certified SafeNet Luna HSMs, Fortress FC-X inline encryption, SPYRUS secure tokens, and Cryptomathic CKMS.',
       icon: ShieldCheck,
-      accent: 'text-blue-700 bg-blue-50/90 border-blue-200',
+      accent: 'text-blue-700 bg-blue-500/10 border-blue-200/50',
       brand: 'safenet',
       tags: ['Luna Network HSM', 'FC-X 10G/1G', 'eToken 5110', 'CKMS'],
     },
@@ -71,7 +70,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Digifort Enterprise VMS, high-speed neural license plate recognition (LPR), city surveillance integration, and perimeter defense.',
       icon: Video,
-      accent: 'text-emerald-700 bg-emerald-50/90 border-emerald-200',
+      accent: 'text-emerald-700 bg-emerald-500/10 border-emerald-200/50',
       brand: 'digifort',
       tags: ['Digifort VMS', 'Neural LPR (250 km/s)', 'Adli Analitik', 'MOBESE'],
     },
@@ -86,7 +85,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Custom embedded cryptographic board design, defense RFP engineering, and Cryptomathic eIDAS qualified electronic signature systems.',
       icon: Cpu,
-      accent: 'text-purple-700 bg-purple-50/90 border-purple-200',
+      accent: 'text-purple-700 bg-purple-500/10 border-purple-200/50',
       brand: 'globalforte',
       tags: ['Gömülü Kripto', 'Savunma RFP', 'eIDAS e-İmza', 'Sistem Mimarisi'],
     },
@@ -101,7 +100,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Tier-3 hardware-secured datacenter hosting, DDoS-mitigated dedicated servers, SSL acceleration, and round-the-clock 24/7 NOC monitoring.',
       icon: Server,
-      accent: 'text-amber-700 bg-amber-50/90 border-amber-200',
+      accent: 'text-amber-700 bg-amber-500/10 border-amber-200/50',
       brand: 'globalforte',
       category: 'Kurumsal Web Hosting ve Veri Merkezi',
       tags: ['DDoS Koruma', 'Dedicated Sunucu', '7/24 NOC', '%99.999 SLA'],
@@ -109,13 +108,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
   ];
 
   return (
-    /* DOĞRUDAN SAYFANIN EN DIŞINA İSTEDİĞİN GÖZ ALICI GRADIENT'İ VERİYORuz */
-    <div 
-      className="space-y-0 w-full max-w-full overflow-x-hidden min-h-screen pb-16"
-      style={{ 
-        backgroundImage: 'linear-gradient(135deg, rgba(227, 6, 19, 0.15) 0%, rgba(255, 255, 255, 1) 50%, rgba(227, 6, 19, 0.08) 100%)'
-      }}
-    >
+    <div className="space-y-0 w-full max-w-full overflow-x-hidden bg-transparent">
       {/* 1. Official Hero Carousel */}
       <HomeHeroSlider
         lang={lang}
@@ -124,7 +117,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       />
 
       {/* 2. Original 5 Core Specialization Domains */}
-      <section className="py-16 bg-transparent border-b border-white/40">
+      <section className="py-16 bg-transparent border-b border-red-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
@@ -145,7 +138,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
 
             <button
               onClick={() => onNavigate('solutions')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/90 hover:bg-white text-slate-800 rounded-xl text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-sm border border-slate-200/60"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/50 hover:bg-white/80 text-slate-800 rounded-xl text-xs font-semibold transition-colors shrink-0 cursor-pointer backdrop-blur-sm border border-white/60 shadow-xs"
             >
               <span>{isTr ? 'Tüm Çözüm Detayları' : 'Explore All Solutions'}</span>
               <ArrowRight className="w-4 h-4 text-red-700" />
@@ -159,10 +152,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                 <div
                   key={dom.id}
                   onClick={() => onNavigate('products', dom.brand, dom.category)}
-                  className="bg-white/85 hover:bg-white/95 backdrop-blur-md border border-white/80 hover:border-red-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer min-w-0 w-full"
+                  className="bg-white/50 hover:bg-white/80 backdrop-blur-md border border-white/60 hover:border-red-300 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer min-w-0 w-full"
                 >
                   <div className="min-w-0">
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center border mb-4 shadow-2xs group-hover:scale-105 transition-transform ${dom.accent}`}>
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center border mb-4 shadow-xs group-hover:scale-105 transition-transform ${dom.accent}`}>
                       <IconComp className="w-5 h-5" />
                     </div>
 
@@ -183,14 +176,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                       {dom.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-medium bg-white/90 px-2 py-0.5 rounded border border-slate-200 text-slate-700 font-mono"
+                          className="text-[10px] font-medium bg-white/60 px-2 py-0.5 rounded border border-white/50 text-slate-700 font-mono"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between text-xs font-bold text-red-700 pt-3 border-t border-slate-200/60 group-hover:translate-x-0.5 transition-transform">
+                    <div className="flex items-center justify-between text-xs font-bold text-red-700 pt-3 border-t border-slate-200/40 group-hover:translate-x-0.5 transition-transform">
                       <span>{isTr ? 'Ürünleri Gör' : 'View Products'}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </div>
@@ -209,7 +202,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       />
 
       {/* 4. Featured Hardware Products Showcase */}
-      <section className="py-20 bg-transparent border-b border-white/40">
+      <section className="py-20 bg-transparent border-b border-red-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
@@ -230,7 +223,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
 
             <button
               onClick={() => onNavigate('products')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-xl text-xs font-semibold transition-colors shadow-sm shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-xl text-xs font-semibold transition-colors shadow-xs shrink-0 cursor-pointer"
             >
               <span>{isTr ? 'Tüm 138 Ürünü İncele' : 'View All 138 Products'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -259,7 +252,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                     onNavigate('products');
                   }
                 }}
-                className="bg-white/90 backdrop-blur-md border border-white/80 hover:border-red-300 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                className="bg-white/50 hover:bg-white/80 backdrop-blur-md border border-white/60 hover:border-red-300 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   <div className="p-2 sm:p-2.5 bg-slate-950/95 border-b border-slate-800">
@@ -269,7 +262,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                   <div className="p-4">
                     <div className="flex items-center justify-between text-[11px] mb-1.5">
                       <span className="font-bold text-red-700">{product.brandName}</span>
-                      <span className="text-[10px] font-mono text-slate-500 font-semibold bg-slate-100 px-1.5 py-0.2 rounded">
+                      <span className="text-[10px] font-mono text-slate-500 font-semibold bg-white/60 px-1.5 py-0.2 rounded">
                         {product.datasheetContent.partNumber}
                       </span>
                     </div>
@@ -283,7 +276,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                     </p>
 
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/50 flex items-center gap-1">
+                      <span className="text-[9px] font-semibold text-emerald-700 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-200/50 flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                         {isTr ? 'Orijinal Donanım Fotoğrafı' : 'Hardware Photo'}
                       </span>
@@ -301,7 +294,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                         onNavigate('products');
                       }
                     }}
-                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-semibold text-slate-800 hover:text-white bg-slate-100 hover:bg-red-700 border border-slate-200 hover:border-red-700 rounded-xl transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-semibold text-slate-800 hover:text-white bg-white/60 hover:bg-red-700 border border-white/60 hover:border-red-700 rounded-xl transition-all cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5 text-red-700 group-hover:text-white transition-colors" />
                     <span>{isTr ? 'Datasheet & Detay' : 'Datasheet & Specs'}</span>
@@ -354,10 +347,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                 <div
                   key={dom.id}
                   onClick={() => onNavigate('solutions')}
-                  className="p-5 sm:p-6 rounded-2xl bg-white/85 hover:bg-white/95 backdrop-blur-md border border-white/80 hover:border-red-300 shadow-sm hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
+                  className="p-5 sm:p-6 rounded-2xl bg-white/50 hover:bg-white/80 backdrop-blur-md border border-white/60 hover:border-red-300 shadow-xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-white text-red-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-white/60 text-red-700 border border-white/60 flex items-center justify-center mb-4 shadow-xs group-hover:scale-105 transition-transform">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
@@ -367,7 +360,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                       {isTr ? dom.descTr : dom.descEn}
                     </p>
                   </div>
-                  <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
+                  <div className="pt-4 mt-4 border-t border-slate-200/40 flex items-center justify-between text-xs font-semibold text-red-700">
                     <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
@@ -379,7 +372,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       </section>
 
       {/* 6. Quick Numbers & Trust Bar */}
-      <section className="py-12 bg-slate-900/95 backdrop-blur-md text-white shadow-lg mx-4 sm:mx-8 rounded-2xl my-8">
+      <section className="py-12 bg-slate-900/90 backdrop-blur-md text-white shadow-lg mx-4 sm:mx-8 rounded-2xl my-8 border border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold font-mono text-red-500">25+</div>
@@ -405,7 +398,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       </section>
 
       {/* 7. Engineering Consultation Call to Action */}
-      <section className="py-14 bg-gradient-to-r from-red-950 via-slate-900 to-slate-950 text-white shadow-xl mx-4 sm:mx-8 rounded-2xl">
+      <section className="py-14 bg-gradient-to-r from-red-950/90 via-slate-900/90 to-slate-950/90 backdrop-blur-md text-white shadow-xl mx-4 sm:mx-8 rounded-2xl border border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-red-400">
