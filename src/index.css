@@ -26,13 +26,12 @@ html {
   }
 }
 
-/* Sitenin arka planı: bordo -> kırmızı -> beyaz, daha yumuşak geçiş ve erişilebilirlik desteği */
+/* Arka plan: daha fazla beyaz, bordo ve kırmızı tonu korunsun */
 body {
   font-family: var(--font-sans);
-  color: #0f172a;
-  /* Daha yumuşak, premium bir geçiş */
-  background: linear-gradient(135deg, #5a0000 0%, #b30000 35%, #ffb6b6 70%, #ffffff 100%);
-  background-size: 200% 200%;
+  color: #111827;
+  background: linear-gradient(135deg, #420000 0%, #7a0000 22%, #c91818 46%, #ffaeae 68%, #ffffff 100%);
+  background-size: 180% 180%;
   animation: flowingGradient 12s ease infinite;
   background-attachment: fixed;
   min-height: 100vh;
@@ -40,7 +39,6 @@ body {
   padding: 0;
 }
 
-/* Reduce motion for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   body {
     animation: none;
