@@ -114,8 +114,9 @@ export default function App() {
     <div 
       className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
       style={{ 
-        background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
-        backgroundAttachment: 'fixed'
+        backgroundImage: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
+        backgroundAttachment: 'fixed',
+        backgroundColor: '#ffffff'
       }}
     >
       {/* SİNEMATİK PERDE */}
@@ -126,7 +127,7 @@ export default function App() {
             fadeAnim ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
           }`}
           style={{ 
-            background: 'linear-gradient(135deg, #8B0000 0%, #ff4d4d 50%, #ffffff 100%)'
+            backgroundImage: 'linear-gradient(135deg, #8B0000 0%, #ff4d4d 50%, #ffffff 100%)'
           }}
         >
           {/* Arka plan ışık süzümleri */}
@@ -158,7 +159,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Top Header - Orijinal Sağlam Hali */}
+      {/* Top Header */}
       <Header
         activePage={activePage}
         onNavigate={handleNavigate}
@@ -170,8 +171,8 @@ export default function App() {
         initialSearchQuery={searchQueryForProducts}
       />
 
-      {/* Main Routed View */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden">
+      {/* Main Routed View - İçindeki beyazlıkları kırmak için stil verdik */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden [&_*]:bg-opacity-90">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
