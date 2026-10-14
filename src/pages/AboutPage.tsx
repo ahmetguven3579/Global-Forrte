@@ -14,7 +14,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
   return (
     <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-red-700 mb-2">
             <span>{isTr ? 'Kurumsal Profil' : 'Corporate Profile'}</span>
@@ -28,12 +27,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
           </h1>
           <p className="text-slate-700 text-sm sm:text-base mt-2 leading-relaxed font-medium">
             {isTr
-              ? '2001 yılından bu yana uluslararası pazarlarda ileri teknoloji ürünleri, kritik bilişim altyapıları, siber güvenlik sistemleri ve stratejik teknoloji danışmanlığı sunan bağımsız sistem entegratörü.'
+              ? '2001 yılından bu yana uluslararası pazarlarda ileri teknoloji ürünleri, kritik bilişim altyapıları, siber güvenlik sistemleri ve stratejik teknoloji danışmanlığı sunuyoruz.'
               : 'An independent systems integrator delivering high-technology infrastructure, mission-critical cybersecurity, and strategic technical consulting across international markets since 2001.'}
           </p>
         </div>
 
-        {/* Detailed & Clean Company Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           <div className="lg:col-span-7 space-y-6 text-sm text-slate-800 leading-relaxed font-medium">
             <div>
@@ -42,8 +40,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </h2>
               <p>
                 {isTr
-                  ? 'Global Forte Bilişim Teknolojileri ve Danışmanlık Ltd. Şti., 2001 yılında kurulmuş olup, yüksek teknolojili donanım ve yazılım ürünlerinin geliştirilmesi, pazarlanması, uluslararası tedariki ve anahtar teslim sistem entegrasyonu alanlarında uzmanlaşmıştır.'
-                  : 'Founded in 2001, Global Forte Information Technologies and Consultancy Ltd. specializes in the engineering, procurement, international distribution, and turnkey integration of high-technology hardware and software architectures.'}
+                  ? 'Global Forte Bilişim Teknolojileri ve Danışmanlık Ltd. Şti., 2001 yılında kurulmuş olup, yüksek teknolojili donanım ve yazılım ürünlerinin geliştirilmesi, pazarlama, dağıtım ve kurumsal entegrasyon alanlarında faaliyet göstermektedir.'
+                  : 'Founded in 2001, Global Forte Information Technologies and Consultancy Ltd. specializes in the engineering, procurement, international distribution, and turnkey integration of high-technology products and systems.'}
               </p>
             </div>
 
@@ -53,8 +51,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </h3>
               <p>
                 {isTr
-                  ? 'Mühendislik odak noktamız; açık sistem (open systems) standartlarına dayalı istemci/sunucu mimarileri, yüksek işlem kapasiteli kriptografik donanım modülleri (HSM), geniş bant taktiksel kablosuz ağlar ve akıllı şehir video yönetim altyapılarıdır. Müşterilerimizin teknolojik bağımsızlığını koruyarak, tescilli veya kapalı sistemlerin kısıtlamalarına takılmadan en yüksek performans ve güvenliği elde etmelerini sağlıyoruz.'
-                  : 'Our engineering core focuses exclusively on open-systems client/server architectures, high-throughput hardware security modules (HSM), broadband tactical wireless meshes, and municipal intelligent video surveillance networks.'}
+                  ? 'Mühendislik odak noktamız; açık sistem (open systems) standartlarına dayalı istemci/sunucu mimarileri, yüksek işlem kapasiteli kriptografik donanım modülleri (HSM), geniş bant kablosuz ağ çözümleri ve kritik sistem entegrasyonudur.'
+                  : 'Our engineering core focuses exclusively on open-systems client/server architectures, high-throughput hardware security modules (HSM), broadband tactical wireless meshes, and critical systems integration.'}
               </p>
             </div>
 
@@ -108,15 +106,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </h3>
               <p>
                 {isTr
-                  ? 'Şirketimizin tek ve merkezi yönetim üssü Sarıyer, İstanbul’da yer almaktadır. Doğu ile Batı arasındaki köprü konumumuz sayesinde Türkiye, Kafkaslar ve Orta Asya pazarlarındaki kamu ve özel sektör projelerine doğrudan, hızlı ve güvenilir mühendislik desteği sağlamaktayız.'
-                  : 'Global Forte operates its single central headquarters in Sariyer, Istanbul, Turkey, delivering direct, agile engineering advisory and technical support across Turkey and neighboring regions.'}
+                  ? 'Şirketimizin tek ve merkezi yönetim üssü Sarıyer, İstanbul’da yer almaktadır. Doğu ile Batı arasındaki köprü konumumuz sayesinde Türkiye, Kafkaslar ve Orta Asya bölgelerinde hızlı teknik destek sağlar.'
+                  : 'Global Forte operates its central headquarters in Sariyer, Istanbul, Turkey, delivering direct, agile engineering advisory and technical support across Turkey and neighboring regions.'}
               </p>
             </div>
           </div>
 
-          {/* Clean Corporate Facts Panel - Buzlu Cam */}
-          <div className="lg:col-span-5 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm">
-            <div className="border-b border-slate-200/60 pb-3">
+          <div className="lg:col-span-5 bg-[#fcfbfb] border border-[#eeeeee] rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm">
+            <div className="border-b border-[#ececec] pb-3">
               <span className="text-xs font-bold uppercase tracking-wider text-red-700">
                 {isTr ? 'Kurumsal Bilgiler' : 'Corporate Facts'}
               </span>
@@ -126,42 +123,42 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
             </div>
 
             <div className="space-y-3.5 text-xs">
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Ticaret Unvanı:' : 'Official Title:'}</span>
                 <span className="text-slate-900 font-bold text-right">Global Forte Bilişim Teknolojileri ve Danışmanlık Ltd.</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Kuruluş Yılı:' : 'Established:'}</span>
                 <span className="text-slate-900 font-bold">2001 (25 Yıllık Tecrübe)</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Genel Merkez:' : 'Headquarters:'}</span>
                 <span className="text-slate-900 font-bold text-right">Pınar Mah. Çamlıbel Cad. No.36B, Sarıyer / İstanbul</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Akreditasyonlar:' : 'Accreditations:'}</span>
                 <span className="text-slate-900 font-bold text-right">ISO 9001, TSE-HYB, ISO 10002, ISO 27001</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Donanım Standartları:' : 'Hardware Standards:'}</span>
                 <span className="text-slate-900 font-bold text-right">FIPS 140-2 L3/4, Common Criteria, PCI DSS</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Yetkili Markalar:' : 'Authorized Brands:'}</span>
                 <span className="text-slate-900 font-bold text-right">SafeNet, Redline, Digifort, Fortress, SPYRUS, Cryptomathic</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Telefon / Faks:' : 'Phone / Fax:'}</span>
                 <span className="text-slate-900 font-mono font-bold">+90 212 279 2440 / 0503</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200/60">
+              <div className="flex justify-between py-2 border-b border-[#ececec]">
                 <span className="text-slate-600 font-medium">{isTr ? 'Kurumsal E-posta:' : 'Corporate Email:'}</span>
                 <span className="text-slate-900 font-mono font-bold">info@globalforte.com</span>
               </div>
@@ -169,15 +166,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
 
             <button
               onClick={() => onNavigate('contact')}
-              className="w-full mt-4 py-2.5 px-4 text-xs font-semibold text-white bg-red-700 hover:bg-red-800 rounded-xl transition-colors text-center shadow-xs cursor-pointer"
+              className="w-full mt-4 py-2.5 px-4 text-xs font-semibold text-white bg-red-700 hover:bg-red-800 rounded-xl transition-colors text-center shadow-sm cursor-pointer"
             >
               {isTr ? 'İletişime Geçin & Teklif Alın' : 'Contact Engineering & Inquiries'}
             </button>
           </div>
         </div>
 
-        {/* 4 Pillars of Excellence */}
-        <div className="border-t border-slate-200/60 pt-16 mb-16">
+        <div className="border-t border-[#ececec] pt-16 mb-16">
           <div className="max-w-2xl mb-10">
             <h2 className="text-2xl font-bold text-slate-900">
               {isTr ? 'Temel Mühendislik İlkelerimiz' : 'Core Engineering Pillars'}
@@ -190,7 +186,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+            <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Shield className="w-5 h-5" />
               </div>
@@ -204,7 +200,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+            <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Target className="w-5 h-5" />
               </div>
@@ -218,7 +214,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+            <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Award className="w-5 h-5" />
               </div>
@@ -232,7 +228,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               </p>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+            <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-2xl p-6 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Users className="w-5 h-5" />
               </div>
@@ -248,8 +244,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
           </div>
         </div>
 
-        {/* Partner Logos Banner Component */}
-        <div className="border-t border-slate-200/60 pt-16">
+        <div className="border-t border-[#ececec] pt-16">
           <div className="text-center max-w-xl mx-auto mb-8">
             <h2 className="text-xl font-bold text-slate-900">
               {isTr ? 'Temsil Ettiğimiz Küresel Teknoloji Liderleri' : 'Authorized Global Technology Brands'}
