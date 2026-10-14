@@ -111,7 +111,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-white">
+    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-transparent">
       
       {/* SİNEMATİK PERDE */}
       {showIntro && (
