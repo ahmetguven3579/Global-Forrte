@@ -40,7 +40,6 @@ export default function App() {
       } else {
         clearInterval(globalInterval);
         
-        // Global bittikten sonra Forte başlasın
         const forteInterval = setInterval(() => {
           if (forteIndex <= targetForte.length) {
             setDisplayedForte(targetForte.slice(0, forteIndex));
@@ -67,7 +66,7 @@ export default function App() {
     };
   }, []);
 
-  // Ekrana herhangi bir yere tıklandığında introyu anında geçme
+  // Ekrana tıklandığında introyu anında geçme
   const handleSkipIntro = () => {
     setFadeAnim(true);
     setTimeout(() => {
@@ -113,13 +112,13 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
+      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-transparent"
       style={{ 
         background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* SİNEMATİK PERDE (Tıklayınca geçer, HEM GLOBAL HEM FORTE GÖLGELİ) */}
+      {/* SİNEMATİK PERDE */}
       {showIntro && (
         <div 
           onClick={handleSkipIntro}
@@ -130,31 +129,23 @@ export default function App() {
             background: 'linear-gradient(135deg, #8B0000 0%, #ff4d4d 50%, #ffffff 100%)'
           }}
         >
-          {/* Arkada daha belirgin ve canlı hareket eden ışık süzümleri */}
+          {/* Arka plan ışık süzümleri */}
           <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
             <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-red-600 rounded-full blur-[100px] animate-pulse"></div>
             <div className="absolute bottom-1/3 right-1/4 w-[30rem] h-[30rem] bg-white rounded-full blur-[120px] animate-ping" style={{ animationDuration: '5s' }}></div>
           </div>
 
-          {/* Global (Gölge efektli Siyah) & Forte (Gölge efektli Kırmızı) Yazı Alanı */}
           <div className="text-center z-10 px-4 transition-all duration-1000 transform">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-wider drop-shadow-2xl font-mono flex items-center justify-center gap-3">
-              {/* GLOBAL YAZISI - GÖLGELİ */}
               <span 
                 className="text-black"
-                style={{ 
-                  filter: 'drop-shadow(0 2px 0 rgba(255,255,255,0.9)) drop-shadow(0 4px 6px rgba(0,0,0,0.6))' 
-                }}
+                style={{ filter: 'drop-shadow(0 2px 0 rgba(255,255,255,0.9)) drop-shadow(0 4px 6px rgba(0,0,0,0.6))' }}
               >
                 {displayedGlobal}
               </span>
-              
-              {/* FORTE YAZISI - GÖLGELİ */}
               <span 
                 className="text-[#8B0000]" 
-                style={{ 
-                  filter: 'drop-shadow(0 2px 0 rgba(255,255,255,0.9)) drop-shadow(0 4px 6px rgba(0,0,0,0.6))' 
-                }}
+                style={{ filter: 'drop-shadow(0 2px 0 rgba(255,255,255,0.9)) drop-shadow(0 4px 6px rgba(0,0,0,0.6))' }}
               >
                 {displayedForte}
               </span>
@@ -167,20 +158,22 @@ export default function App() {
         </div>
       )}
 
-      {/* Top Header with Multi-Page Navigation, Global Search Bar & Quick Categories Bar */}
-      <Header
-        activePage={activePage}
-        onNavigate={handleNavigate}
-        currentLang={lang}
-        onToggleLang={toggleLanguage}
-        activeBrand={selectedBrandForProducts}
-        activeCategory={selectedCategoryForProducts}
-        onOpenDatasheet={handleOpenDatasheet}
-        initialSearchQuery={searchQueryForProducts}
-      />
+      {/* Top Header */}
+      <div className="bg-transparent backdrop-blur-sm">
+        <Header
+          activePage={activePage}
+          onNavigate={handleNavigate}
+          currentLang={lang}
+          onToggleLang={toggleLanguage}
+          activeBrand={selectedBrandForProducts}
+          activeCategory={selectedCategoryForProducts}
+          onOpenDatasheet={handleOpenDatasheet}
+          initialSearchQuery={searchQueryForProducts}
+        />
+      </div>
 
-      {/* Main Multi-Page Routed View */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden">
+      {/* Main Routed View - Şeffaf Katman */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden bg-transparent">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
@@ -227,10 +220,12 @@ export default function App() {
         )}
       </main>
 
-      {/* Corporate Footer with Logos & Certifications */}
-      <Footer onNavigate={handleNavigate} lang={lang} />
+      {/* Corporate Footer - Şeffaf Katman */}
+      <div className="bg-transparent backdrop-blur-sm">
+        <Footer onNavigate={handleNavigate} lang={lang} />
+      </div>
 
-      {/* Official Technical Datasheet Viewer & Downloader Modal */}
+      {/* Datasheet Modal */}
       <DatasheetModal
         product={datasheetProduct}
         onClose={() => setDatasheetProduct(null)}
