@@ -41,7 +41,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Carrier-grade PTP & PMP wireless infrastructure, Redline virtual fiber optic links, and Fortress tactical military communications.',
       icon: Wifi,
-      accent: 'text-red-700 bg-red-50 border-red-200',
+      accent: 'text-red-700 bg-red-50/80 border-red-200',
       brand: 'redline',
       tags: ['RDL-3000 XP', 'AN-80i (50+ km)', 'Taktik Mesh', 'WiMAX'],
     },
@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'FIPS 140-2 Level 3 certified SafeNet Luna HSMs, Fortress FC-X inline encryption, SPYRUS secure tokens, and Cryptomathic CKMS.',
       icon: ShieldCheck,
-      accent: 'text-blue-700 bg-blue-50 border-blue-200',
+      accent: 'text-blue-700 bg-blue-50/80 border-blue-200',
       brand: 'safenet',
       tags: ['Luna Network HSM', 'FC-X 10G/1G', 'eToken 5110', 'CKMS'],
     },
@@ -71,7 +71,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Digifort Enterprise VMS, high-speed neural license plate recognition (LPR), city surveillance integration, and perimeter defense.',
       icon: Video,
-      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+      accent: 'text-emerald-700 bg-emerald-50/80 border-emerald-200',
       brand: 'digifort',
       tags: ['Digifort VMS', 'Neural LPR (250 km/s)', 'Adli Analitik', 'MOBESE'],
     },
@@ -86,7 +86,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Custom embedded cryptographic board design, defense RFP engineering, and Cryptomathic eIDAS qualified electronic signature systems.',
       icon: Cpu,
-      accent: 'text-purple-700 bg-purple-50 border-purple-200',
+      accent: 'text-purple-700 bg-purple-50/80 border-purple-200',
       brand: 'globalforte',
       tags: ['Gömülü Kripto', 'Savunma RFP', 'eIDAS e-İmza', 'Sistem Mimarisi'],
     },
@@ -101,7 +101,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
       descEn:
         'Tier-3 hardware-secured datacenter hosting, DDoS-mitigated dedicated servers, SSL acceleration, and round-the-clock 24/7 NOC monitoring.',
       icon: Server,
-      accent: 'text-amber-700 bg-amber-50 border-amber-200',
+      accent: 'text-amber-700 bg-amber-50/80 border-amber-200',
       brand: 'globalforte',
       category: 'Kurumsal Web Hosting ve Veri Merkezi',
       tags: ['DDoS Koruma', 'Dedicated Sunucu', '7/24 NOC', '%99.999 SLA'],
@@ -109,16 +109,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
   ];
 
   return (
-    <div className="space-y-0 w-full max-w-full overflow-x-hidden">
-      {/* 1. Official Hero Carousel (Kayan Resimler / News & Project Slider from original Global Forte site) */}
+    <div className="space-y-0 w-full max-w-full overflow-x-hidden bg-transparent">
+      {/* 1. Official Hero Carousel */}
       <HomeHeroSlider
         lang={lang}
         onNavigate={onNavigate}
         onOpenDatasheet={onOpenDatasheet}
       />
 
-      {/* 2. Original 5 Core Specialization Domains from the Website Architecture */}
-      <section className="py-16 bg-white border-b border-slate-200">
+      {/* 2. Original 5 Core Specialization Domains */}
+      <section className="py-16 bg-transparent border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
@@ -130,7 +130,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 {isTr ? 'Kritik Görev ve Yüksek Güvenlik Teknolojileri' : 'Mission-Critical & High-Assurance Technologies'}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-700 mt-2 max-w-2xl font-medium">
                 {isTr
                   ? 'Savunma, kamu, finans ve telekomünikasyon sektörlerinde 2001 yılından bu yana uyguladığımız beş ana teknoloji mimarisi.'
                   : 'Five foundational technology architectures deployed across defense, public sector, and banking since 2001.'}
@@ -139,7 +139,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
 
             <button
               onClick={() => onNavigate('solutions')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold transition-colors shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 hover:bg-white text-slate-800 rounded-xl text-xs font-semibold transition-colors shrink-0 cursor-pointer shadow-sm"
             >
               <span>{isTr ? 'Tüm Çözüm Detayları' : 'Explore All Solutions'}</span>
               <ArrowRight className="w-4 h-4 text-red-700" />
@@ -153,7 +153,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                 <div
                   key={dom.id}
                   onClick={() => onNavigate('products', dom.brand, dom.category)}
-                  className="bg-slate-50/80 hover:bg-white border border-slate-200 hover:border-red-300 rounded-2xl p-5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer min-w-0 w-full"
+                  className="bg-white/80 hover:bg-white/95 backdrop-blur-sm border border-white/60 hover:border-red-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer min-w-0 w-full"
                 >
                   <div className="min-w-0">
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center border mb-4 shadow-2xs group-hover:scale-105 transition-transform ${dom.accent}`}>
@@ -163,11 +163,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                     <h3 className="text-sm font-extrabold text-slate-900 group-hover:text-red-700 transition-colors mb-1 break-words">
                       {isTr ? dom.titleTr : dom.titleEn}
                     </h3>
-                    <div className="text-[11px] font-semibold text-slate-500 mb-2 break-words">
+                    <div className="text-[11px] font-semibold text-slate-600 mb-2 break-words">
                       {isTr ? dom.subtitleTr : dom.subtitleEn}
                     </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed mb-4 break-words">
+                    <p className="text-xs text-slate-700 leading-relaxed mb-4 break-words font-medium">
                       {isTr ? dom.descTr : dom.descEn}
                     </p>
                   </div>
@@ -177,7 +177,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                       {dom.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-medium bg-white px-2 py-0.5 rounded border border-slate-200/80 text-slate-600 font-mono"
+                          className="text-[10px] font-medium bg-white/90 px-2 py-0.5 rounded border border-slate-200 text-slate-700 font-mono"
                         >
                           {tag}
                         </span>
@@ -196,14 +196,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
         </div>
       </section>
 
-      {/* 3. Official Partner Logos & Quality Accreditation Banner */}
+      {/* 3. Official Partner Logos */}
       <PartnerLogosBanner
         lang={lang}
         onSelectBrand={(brandId) => onNavigate('products', brandId)}
       />
 
-      {/* 4. Featured Hardware Products Showcase with Real Equipment Photos */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      {/* 4. Featured Hardware Products Showcase */}
+      <section className="py-20 bg-transparent border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
@@ -215,7 +215,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 {isTr ? 'Öne Çıkan Teknoloji Ürünleri & Gerçek Donanım Galerisi' : 'Featured Technology Products & Hardware Gallery'}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-700 mt-2 max-w-2xl font-medium">
                 {isTr
                   ? 'SafeNet HSM’ler, Redline kablosuz istasyonlar, Digifort video analiz sistemleri ve Fortress donanımsal kripto cihazlarının teknik parametreleri ve fotoğrafları.'
                   : 'High-resolution hardware photography and technical specifications for SafeNet HSMs, Redline wireless stations, Digifort VMS, and Fortress encryptors.'}
@@ -224,7 +224,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
 
             <button
               onClick={() => onNavigate('products')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-xl text-xs font-semibold transition-colors shadow-2xs shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-700 hover:bg-red-800 text-white rounded-xl text-xs font-semibold transition-colors shadow-sm shrink-0 cursor-pointer"
             >
               <span>{isTr ? 'Tüm 138 Ürünü İncele' : 'View All 138 Products'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -253,10 +253,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                     onNavigate('products');
                   }
                 }}
-                className="bg-white border border-slate-200/90 hover:border-red-300 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                className="bg-white/90 backdrop-blur-sm border border-white/60 hover:border-red-300 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
               >
                 <div>
-                  {/* Photo / Visual Container with balanced padding */}
                   <div className="p-2 sm:p-2.5 bg-slate-950/95 border-b border-slate-800">
                     <ProductVisualBadge product={product} size="md" />
                   </div>
@@ -264,7 +263,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                   <div className="p-4">
                     <div className="flex items-center justify-between text-[11px] mb-1.5">
                       <span className="font-bold text-red-700">{product.brandName}</span>
-                      <span className="text-[10px] font-mono text-slate-400 font-semibold bg-slate-100 px-1.5 py-0.2 rounded">
+                      <span className="text-[10px] font-mono text-slate-500 font-semibold bg-slate-100 px-1.5 py-0.2 rounded">
                         {product.datasheetContent.partNumber}
                       </span>
                     </div>
@@ -273,7 +272,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                       {product.name}
                     </h3>
 
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+                    <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed mb-3 font-medium">
                       {isTr ? product.summaryTr : product.summaryEn}
                     </p>
 
@@ -321,8 +320,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
         </div>
       </section>
 
-      {/* 5. Core Solutions Grid Teaser - All 5 Enterprise Architecture Areas */}
-      <section className="py-20 bg-white">
+      {/* 5. Core Solutions Grid Teaser */}
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
@@ -343,131 +342,38 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 items-stretch">
-            {/* 1. Ağ Güvenliği */}
-            <div
-              onClick={() => onNavigate('solutions')}
-              className="p-5 sm:p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-300 shadow-2xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-blue-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                  <ShieldCheck className="w-5 h-5" />
+            {coreDomains.map((dom) => {
+              const IconComp = dom.icon;
+              return (
+                <div
+                  key={dom.id}
+                  onClick={() => onNavigate('solutions')}
+                  className="p-5 sm:p-6 rounded-2xl bg-white/80 hover:bg-white/95 backdrop-blur-sm border border-white/60 hover:border-red-300 shadow-sm hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-white text-red-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
+                      {isTr ? dom.titleTr : dom.titleEn}
+                    </h3>
+                    <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                      {isTr ? dom.descTr : dom.descEn}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
+                    <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
-                  {isTr ? 'Ağ Güvenliği & HSM' : 'Network Security & HSM'}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {isTr
-                    ? 'FC-X donanımsal hat içi şifreleyiciler, Suite B kriptografi ve SafeNet Luna HSM çözümleri.'
-                    : 'FC-X hardware inline encryptors, Suite B cryptography, and SafeNet Luna HSMs.'}
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
-                <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* 2. Akıllı Video */}
-            <div
-              onClick={() => onNavigate('solutions')}
-              className="p-5 sm:p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-300 shadow-2xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-emerald-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                  <Video className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
-                  {isTr ? 'Akıllı Video & PTS' : 'Smart Video & Neural LPR'}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {isTr
-                    ? 'Digifort Enterprise VMS, yüksek hızlı plaka tanıma ve adli video arama motorları.'
-                    : 'Digifort Enterprise VMS, neural license plate recognition, and forensic video search.'}
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
-                <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* 3. Geniş Bant */}
-            <div
-              onClick={() => onNavigate('solutions')}
-              className="p-5 sm:p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-300 shadow-2xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-red-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                  <Wifi className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
-                  {isTr ? 'Geniş Bant & Taktik Mesh' : 'Broadband & Tactical Mesh'}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {isTr
-                    ? 'Redline RDL-3000 XP taşıyıcı sınıfı kablosuz ağlar ve Fortress taktiksel askeri mesh düğümleri.'
-                    : 'Redline RDL-3000 XP broadband and Fortress tactical military mesh nodes.'}
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
-                <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* 4. Özel Geliştirme & Ar-Ge */}
-            <div
-              onClick={() => onNavigate('services')}
-              className="p-5 sm:p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-300 shadow-2xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-purple-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
-                  {isTr ? 'Özel Donanım Tasarımı' : 'Custom Embedded Crypto'}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {isTr
-                    ? 'Gömülü kriptografik donanım mühendisliği, savunma RFP şartnameleri ve eIDAS imza mimarisi.'
-                    : 'Custom embedded cryptographic board design, defense RFP engineering, and eIDAS compliance.'}
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
-                <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-
-            {/* 5. Kurumsal Hosting & Sunucu */}
-            <div
-              onClick={() => onNavigate('products', 'globalforte', 'Kurumsal Web Hosting ve Veri Merkezi')}
-              className="p-5 sm:p-6 rounded-2xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-300 shadow-2xs hover:shadow-md cursor-pointer transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-amber-700 border border-slate-200 flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                  <Server className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-red-700 transition-colors mb-2">
-                  {isTr ? 'Kurumsal Web Hosting' : 'Enterprise Hosting & NOC'}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {isTr
-                    ? 'Tier-3 veri merkezi barındırma, DDoS korumalı dedicated sunucular ve 7/24 NOC izleme.'
-                    : 'Tier-3 datacenter colocation, DDoS-mitigated dedicated servers, and 24/7 proactive NOC.'}
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-red-700">
-                <span>{isTr ? 'Detayları İncele' : 'Learn More'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* 6. Quick Numbers & Trust Bar - 5 Key Corporate Metrics */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* 6. Quick Numbers & Trust Bar */}
+      <section className="py-12 bg-slate-900 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
           <div>
             <div className="text-3xl sm:text-4xl font-extrabold font-mono text-red-500">25+</div>
@@ -492,8 +398,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
         </div>
       </section>
 
-      {/* 7. Engineering Consultation & Inquiry Call to Action */}
-      <section className="py-14 bg-gradient-to-r from-red-900 via-slate-900 to-slate-950 text-white">
+      {/* 7. Engineering Consultation Call to Action */}
+      <section className="py-14 bg-gradient-to-r from-red-900 via-slate-900 to-slate-950 text-white shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-red-400">
@@ -504,7 +410,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenDatasheet,
                 ? 'Kritik Görev Projeniz İçin Teknik Danışmanlık ve Şartname Desteği Alın'
                 : 'Request Technical Advisory & RFP Specification Support'}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl break-words">
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl font-medium">
               {isTr
                 ? 'Mecidiyeköy İstanbul merkez ofisimiz ve uzman mühendis kadromuzla donanımsal kripto, geniş bant kablosuz ve akıllı video gözetim projelerinizi planlayalım.'
                 : 'Our Mecidiyeköy Istanbul engineering team assists with hardware crypto, tactical wireless, and intelligent video surveillance deployments.'}
