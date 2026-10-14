@@ -111,7 +111,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-white">
+    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-slate-50">
       
       {/* SİNEMATİK PERDE */}
       {showIntro && (
@@ -153,20 +153,29 @@ export default function App() {
         </div>
       )}
 
-      {/* TOP HEADER */}
-      <Header
-        activePage={activePage}
-        onNavigate={handleNavigate}
-        currentLang={lang}
-        onToggleLang={toggleLanguage}
-        activeBrand={selectedBrandForProducts}
-        activeCategory={selectedCategoryForProducts}
-        onOpenDatasheet={handleOpenDatasheet}
-        initialSearchQuery={searchQueryForProducts}
-      />
+      {/* TOP HEADER - ÜST KISIM KOYU BORDO KURUMSAL ÇERÇEVE */}
+      <div 
+        className="w-full shadow-md text-white relative z-20"
+        style={{ 
+          backgroundImage: 'linear-gradient(90deg, #600000 0%, #8B0000 50%, #a30000 100%)'
+        }}
+      >
+        <div className="w-full max-w-7xl mx-auto">
+          <Header
+            activePage={activePage}
+            onNavigate={handleNavigate}
+            currentLang={lang}
+            onToggleLang={toggleLanguage}
+            activeBrand={selectedBrandForProducts}
+            activeCategory={selectedCategoryForProducts}
+            onOpenDatasheet={handleOpenDatasheet}
+            initialSearchQuery={searchQueryForProducts}
+          />
+        </div>
+      </div>
 
-      {/* MAIN ROUTED VIEW (Ekstra şerit yok, tertemiz orijinal hali) */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden">
+      {/* MAIN ROUTED VIEW - ORTA ALAN TERTEMİZ OKUNABİLİR ZEMİN */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden bg-white shadow-sm">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
@@ -213,8 +222,17 @@ export default function App() {
         )}
       </main>
 
-      {/* CORPORATE FOOTER */}
-      <Footer onNavigate={handleNavigate} lang={lang} />
+      {/* CORPORATE FOOTER - ALT KISIM KOYU BORDO KURUMSAL ÇERÇEVE */}
+      <div 
+        className="w-full text-white relative z-20 shadow-inner"
+        style={{ 
+          backgroundImage: 'linear-gradient(90deg, #600000 0%, #8B0000 50%, #a30000 100%)'
+        }}
+      >
+        <div className="w-full max-w-7xl mx-auto">
+          <Footer onNavigate={handleNavigate} lang={lang} />
+        </div>
+      </div>
 
       {/* DATASHEET MODAL */}
       <DatasheetModal
