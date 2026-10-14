@@ -28,7 +28,7 @@ export default function App() {
   const targetGlobal = 'Global';
   const targetForte = 'Forte';
 
-  // Daktilo efekti (Önce Global, sonra Forte yazılır)
+  // Daktilo efekti
   useEffect(() => {
     let globalIndex = 0;
     let forteIndex = 0;
@@ -112,7 +112,7 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-transparent"
+      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
       style={{ 
         background: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
         backgroundAttachment: 'fixed'
@@ -158,22 +158,20 @@ export default function App() {
         </div>
       )}
 
-      {/* Top Header */}
-      <div className="bg-transparent backdrop-blur-sm">
-        <Header
-          activePage={activePage}
-          onNavigate={handleNavigate}
-          currentLang={lang}
-          onToggleLang={toggleLanguage}
-          activeBrand={selectedBrandForProducts}
-          activeCategory={selectedCategoryForProducts}
-          onOpenDatasheet={handleOpenDatasheet}
-          initialSearchQuery={searchQueryForProducts}
-        />
-      </div>
+      {/* Top Header - Orijinal Sağlam Hali */}
+      <Header
+        activePage={activePage}
+        onNavigate={handleNavigate}
+        currentLang={lang}
+        onToggleLang={toggleLanguage}
+        activeBrand={selectedBrandForProducts}
+        activeCategory={selectedCategoryForProducts}
+        onOpenDatasheet={handleOpenDatasheet}
+        initialSearchQuery={searchQueryForProducts}
+      />
 
-      {/* Main Routed View - Şeffaf Katman */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden bg-transparent">
+      {/* Main Routed View */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
@@ -220,10 +218,8 @@ export default function App() {
         )}
       </main>
 
-      {/* Corporate Footer - Şeffaf Katman */}
-      <div className="bg-transparent backdrop-blur-sm">
-        <Footer onNavigate={handleNavigate} lang={lang} />
-      </div>
+      {/* Corporate Footer */}
+      <Footer onNavigate={handleNavigate} lang={lang} />
 
       {/* Datasheet Modal */}
       <DatasheetModal
