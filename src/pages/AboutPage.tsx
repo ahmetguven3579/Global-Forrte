@@ -12,7 +12,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
   const isTr = lang === 'TR';
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-white min-h-screen">
+    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12">
@@ -26,7 +26,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               ? 'Global Forte Bilişim Teknolojileri ve Danışmanlık'
               : 'Global Forte Information Technologies & Consultancy'}
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+          <p className="text-slate-700 text-sm sm:text-base mt-2 leading-relaxed font-medium">
             {isTr
               ? '2001 yılından bu yana uluslararası pazarlarda ileri teknoloji ürünleri, kritik bilişim altyapıları, siber güvenlik sistemleri ve stratejik teknoloji danışmanlığı sunan bağımsız sistem entegratörü.'
               : 'An independent systems integrator delivering high-technology infrastructure, mission-critical cybersecurity, and strategic technical consulting across international markets since 2001.'}
@@ -35,7 +35,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
 
         {/* Detailed & Clean Company Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-          <div className="lg:col-span-7 space-y-6 text-sm text-slate-700 leading-relaxed">
+          <div className="lg:col-span-7 space-y-6 text-sm text-slate-800 leading-relaxed font-medium">
             <div>
               <h2 className="text-xl font-bold text-slate-900 mb-3">
                 {isTr ? 'Şirket Tanımı ve Faaliyet Alanı' : 'Company Overview & Operating Scope'}
@@ -62,7 +62,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
               <h3 className="text-base font-bold text-slate-900 mb-2">
                 {isTr ? 'Uzmanlık ve Çözüm Alanlarımız' : 'Core Disciplines & Competencies'}
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm list-disc pl-5 text-slate-600">
+              <ul className="space-y-2 text-xs sm:text-sm list-disc pl-5 text-slate-700">
                 <li>
                   <strong className="text-slate-900">{isTr ? 'Donanımsal Güvenlik Modülleri (HSM):' : 'Hardware Security Modules (HSM):'}</strong>{' '}
                   {isTr
@@ -114,9 +114,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
             </div>
           </div>
 
-          {/* Clean Corporate Facts Panel */}
-          <div className="lg:col-span-5 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-7 space-y-5">
-            <div className="border-b border-slate-200 pb-3">
+          {/* Clean Corporate Facts Panel - Buzlu Cam */}
+          <div className="lg:col-span-5 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm">
+            <div className="border-b border-slate-200/60 pb-3">
               <span className="text-xs font-bold uppercase tracking-wider text-red-700">
                 {isTr ? 'Kurumsal Bilgiler' : 'Corporate Facts'}
               </span>
@@ -126,50 +126,50 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
             </div>
 
             <div className="space-y-3.5 text-xs">
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Ticaret Unvanı:' : 'Official Title:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Ticaret Unvanı:' : 'Official Title:'}</span>
                 <span className="text-slate-900 font-bold text-right">Global Forte Bilişim Teknolojileri ve Danışmanlık Ltd.</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Kuruluş Yılı:' : 'Established:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Kuruluş Yılı:' : 'Established:'}</span>
                 <span className="text-slate-900 font-bold">2001 (25 Yıllık Tecrübe)</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Genel Merkez:' : 'Headquarters:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Genel Merkez:' : 'Headquarters:'}</span>
                 <span className="text-slate-900 font-bold text-right">Pınar Mah. Çamlıbel Cad. No.36B, Sarıyer / İstanbul</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Akreditasyonlar:' : 'Accreditations:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Akreditasyonlar:' : 'Accreditations:'}</span>
                 <span className="text-slate-900 font-bold text-right">ISO 9001, TSE-HYB, ISO 10002, ISO 27001</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Donanım Standartları:' : 'Hardware Standards:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Donanım Standartları:' : 'Hardware Standards:'}</span>
                 <span className="text-slate-900 font-bold text-right">FIPS 140-2 L3/4, Common Criteria, PCI DSS</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Yetkili Markalar:' : 'Authorized Brands:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Yetkili Markalar:' : 'Authorized Brands:'}</span>
                 <span className="text-slate-900 font-bold text-right">SafeNet, Redline, Digifort, Fortress, SPYRUS, Cryptomathic</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Telefon / Faks:' : 'Phone / Fax:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Telefon / Faks:' : 'Phone / Fax:'}</span>
                 <span className="text-slate-900 font-mono font-bold">+90 212 279 2440 / 0503</span>
               </div>
 
-              <div className="flex justify-between py-2 border-b border-slate-200">
-                <span className="text-slate-500 font-medium">{isTr ? 'Kurumsal E-posta:' : 'Corporate Email:'}</span>
+              <div className="flex justify-between py-2 border-b border-slate-200/60">
+                <span className="text-slate-600 font-medium">{isTr ? 'Kurumsal E-posta:' : 'Corporate Email:'}</span>
                 <span className="text-slate-900 font-mono font-bold">info@globalforte.com</span>
               </div>
             </div>
 
             <button
               onClick={() => onNavigate('contact')}
-              className="w-full mt-4 py-2.5 px-4 text-xs font-semibold text-white bg-red-700 hover:bg-red-800 rounded-xl transition-colors text-center shadow-2xs cursor-pointer"
+              className="w-full mt-4 py-2.5 px-4 text-xs font-semibold text-white bg-red-700 hover:bg-red-800 rounded-xl transition-colors text-center shadow-xs cursor-pointer"
             >
               {isTr ? 'İletişime Geçin & Teklif Alın' : 'Contact Engineering & Inquiries'}
             </button>
@@ -177,12 +177,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
         </div>
 
         {/* 4 Pillars of Excellence */}
-        <div className="border-t border-slate-200 pt-16 mb-16">
+        <div className="border-t border-slate-200/60 pt-16 mb-16">
           <div className="max-w-2xl mb-10">
             <h2 className="text-2xl font-bold text-slate-900">
               {isTr ? 'Temel Mühendislik İlkelerimiz' : 'Core Engineering Pillars'}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            <p className="text-xs sm:text-sm text-slate-700 mt-1 font-medium">
               {isTr
                 ? 'Çeyrek asırlık başarımızın arkasındaki ödünsüz kurumsal prensipler.'
                 : 'Uncompromising corporate principles behind twenty-five years of operational reliability.'}
@@ -190,56 +190,56 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center mb-4">
+            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Shield className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 mb-1.5">
                 {isTr ? 'Uluslararası Sertifikasyon' : 'Certified Compliance'}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 {isTr
                   ? 'FIPS 140-2 Seviye 3/4, Common Criteria EAL 4+ ve NATO uyumlu kripto standartlarında donanım.'
                   : 'FIPS 140-2 Level 3/4, Common Criteria EAL 4+, and defense-grade certified cryptographic hardware.'}
               </p>
             </div>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center mb-4">
+            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Target className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 mb-1.5">
                 {isTr ? 'Açık Sistem Entegrasyonu' : 'Open Standards'}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 {isTr
                   ? 'Tescilli kısıtlamalardan arındırılmış, mevcut altyapılarla sorunsuz haberleşen modüler mimari.'
                   : 'Interoperable systems engineering minimizing vendor lock-in with standard protocols.'}
               </p>
             </div>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center mb-4">
+            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Award className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 mb-1.5">
                 {isTr ? 'TSE ve ISO Kalite Güvencesi' : 'TSE & ISO Audited'}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 {isTr
                   ? 'ISO 9001, ISO 27001, ISO 10002 ve TSE-HYB denetimlerinden geçmiş kurumsal hizmet süreci.'
                   : 'Regularly audited and certified service adequacy by Turkish Standards Institution and ISO.'}
               </p>
             </div>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-              <div className="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center mb-4">
+            <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-700 flex items-center justify-center mb-4 border border-red-200/40">
                 <Users className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold text-slate-900 mb-1.5">
                 {isTr ? '7/24 Kesintisiz Destek' : '24/7 Dedicated Support'}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 {isTr
                   ? 'Kritik kamu, banka ve savunma altyapıları için yerinde mühendislik müdahalesi ve yedek parça temini.'
                   : 'On-site mission support, SLA management, and component provisioning for high-availability sites.'}
@@ -249,12 +249,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, lang }) => {
         </div>
 
         {/* Partner Logos Banner Component */}
-        <div className="border-t border-slate-200 pt-16">
+        <div className="border-t border-slate-200/60 pt-16">
           <div className="text-center max-w-xl mx-auto mb-8">
             <h2 className="text-xl font-bold text-slate-900">
               {isTr ? 'Temsil Ettiğimiz Küresel Teknoloji Liderleri' : 'Authorized Global Technology Brands'}
             </h2>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-600 mt-1 font-medium">
               {isTr
                 ? 'Dünyanın en güvenilir bilişim ve güvenlik üreticilerinin resmi Türkiye temsilcisi.'
                 : 'Authorized distributor and system integrator for leading technology brands.'}
