@@ -111,14 +111,17 @@ export default function App() {
   };
 
   return (
-    <div 
-      className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative"
-      style={{ 
-        backgroundImage: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
-        backgroundAttachment: 'fixed',
-        backgroundColor: '#ffffff'
-      }}
-    >
+    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-white">
+      
+      {/* EN ARKAYA SABİTLENMİŞ GRADIENT KATMANI (Hiçbir şey bunu örtemez) */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{ 
+          backgroundImage: 'linear-gradient(135deg, #e30613 0%, #ffffff 100%)',
+          opacity: 0.15 // Çok hafif arka plana işlesin ki yazılar okunsun, istersen bu opacitiy'yi artırabilirsin
+        }}
+      ></div>
+
       {/* SİNEMATİK PERDE */}
       {showIntro && (
         <div 
@@ -160,19 +163,21 @@ export default function App() {
       )}
 
       {/* Top Header */}
-      <Header
-        activePage={activePage}
-        onNavigate={handleNavigate}
-        currentLang={lang}
-        onToggleLang={toggleLanguage}
-        activeBrand={selectedBrandForProducts}
-        activeCategory={selectedCategoryForProducts}
-        onOpenDatasheet={handleOpenDatasheet}
-        initialSearchQuery={searchQueryForProducts}
-      />
+      <div className="relative z-10">
+        <Header
+          activePage={activePage}
+          onNavigate={handleNavigate}
+          currentLang={lang}
+          onToggleLang={toggleLanguage}
+          activeBrand={selectedBrandForProducts}
+          activeCategory={selectedCategoryForProducts}
+          onOpenDatasheet={handleOpenDatasheet}
+          initialSearchQuery={searchQueryForProducts}
+        />
+      </div>
 
-      {/* Main Routed View - İçindeki beyazlıkları kırmak için stil verdik */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden [&_*]:bg-opacity-90">
+      {/* Main Routed View */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden relative z-10">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
@@ -220,7 +225,9 @@ export default function App() {
       </main>
 
       {/* Corporate Footer */}
-      <Footer onNavigate={handleNavigate} lang={lang} />
+      <div className="relative z-10">
+        <Footer onNavigate={handleNavigate} lang={lang} />
+      </div>
 
       {/* Datasheet Modal */}
       <DatasheetModal
