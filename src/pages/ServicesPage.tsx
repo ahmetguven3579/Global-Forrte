@@ -145,7 +145,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#b71818]/40 bg-white/85 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7a0000] shadow-sm backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#b71818]/40 bg-white/85 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7a0000] shadow-sm">
             <span>{isTr ? 'Global Forte Hizmetleri' : 'Global Forte Services'}</span>
             <span className="text-[#c91818]">•</span>
             <span>{isTr ? 'Hizmetler' : 'Services'}</span>
@@ -168,12 +168,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
             return (
               <div
                 key={srv.id}
-                className="rounded-[28px] border border-[#b71818]/35 bg-[#fffaf9] p-5 sm:p-7 lg:p-8 shadow-[0_18px_50px_rgba(120,0,0,0.08)]"
+                className="rounded-[28px] border border-[#eee] bg-[#fcfbfb] p-5 sm:p-7 lg:p-8 shadow-sm"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   <div className="lg:col-span-7">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7a0000] text-white shadow-inner ring-1 ring-[#a00d0d]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7a0000] text-white ring-0">
                         <IconComp className="h-5 w-5" />
                       </div>
 
@@ -192,7 +192,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
                     </p>
                   </div>
 
-                  <div className="lg:col-span-5 rounded-2xl border border-[#b71818]/35 bg-gradient-to-br from-[#fff1f1] via-[#fffdfd] to-white p-5 shadow-sm">
+                  <div className="lg:col-span-5 rounded-2xl border border-[#eee] bg-[#fffaf9] p-5 shadow-sm">
                     <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-900">
                       {isTr ? 'Hizmet Kapsamı & Özellikler' : 'Service Scope & Deliverables'}
                     </h3>
@@ -211,13 +211,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
           })}
         </div>
 
-        <div className="rounded-[28px] bg-gradient-to-r from-[#4a0000] via-[#7a0000] to-[#9d1010] p-7 sm:p-8 lg:p-10 text-white shadow-[0_18px_55px_rgba(15,23,42,0.25)]">
+        <div className="rounded-[28px] bg-[#700000] p-7 sm:p-8 lg:p-10 text-white shadow-sm">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <h3 className="text-2xl font-bold tracking-tight">
                 {isTr ? 'Kurumsal Projeleriniz İçin Uzman Kadromuzla Görüşün' : 'Consult with Our Systems Engineering Team'}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-red-50/90">
+              <p className="mt-3 text-sm leading-relaxed text-red-50">
                 {isTr
                   ? 'İhtiyaçlarınıza özel danışmanlık, sistem entegrasyonu ve SLA teklifi almak için doğrudan İstanbul merkezimizle irtibata geçebilirsiniz.'
                   : 'Contact our Istanbul headquarters to discuss customized consultancy, systems integration, or technical support agreements tailored to your business priorities.'}
