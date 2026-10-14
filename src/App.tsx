@@ -111,8 +111,21 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-slate-50">
+    <div className="min-h-screen text-slate-900 flex flex-col font-sans selection:bg-red-600 selection:text-white w-full max-w-full overflow-x-hidden relative bg-white">
       
+      {/* ========================================================
+          EN ARKAYA ZIMBALANMIŞ SABİT KURUMSAL ARKA PLAN KATMANI
+          (Bunu hiçbir bileşen, bg-white veya tailwind sınıfı kapatamaz!)
+         ======================================================== */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Sol üst köşeden yayılan ana kırmızı/bordo ışık süzmesi */}
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-red-600/15 rounded-full blur-[140px]"></div>
+        {/* Sağ alt köşeye doğru süzülen hafif kurumsal doku */}
+        <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-red-900/10 rounded-full blur-[160px]"></div>
+        {/* Arka planda ince bir grid (kareli teknoloji deseni) */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+      </div>
+
       {/* SİNEMATİK PERDE */}
       {showIntro && (
         <div 
@@ -153,29 +166,22 @@ export default function App() {
         </div>
       )}
 
-      {/* TOP HEADER - ÜST KISIM KOYU BORDO KURUMSAL ÇERÇEVE */}
-      <div 
-        className="w-full shadow-md text-white relative z-20"
-        style={{ 
-          backgroundImage: 'linear-gradient(90deg, #600000 0%, #8B0000 50%, #a30000 100%)'
-        }}
-      >
-        <div className="w-full max-w-7xl mx-auto">
-          <Header
-            activePage={activePage}
-            onNavigate={handleNavigate}
-            currentLang={lang}
-            onToggleLang={toggleLanguage}
-            activeBrand={selectedBrandForProducts}
-            activeCategory={selectedCategoryForProducts}
-            onOpenDatasheet={handleOpenDatasheet}
-            initialSearchQuery={searchQueryForProducts}
-          />
-        </div>
+      {/* TOP HEADER (z-10 ile arka planın üstünde, sapasağlam durur) */}
+      <div className="relative z-10">
+        <Header
+          activePage={activePage}
+          onNavigate={handleNavigate}
+          currentLang={lang}
+          onToggleLang={toggleLanguage}
+          activeBrand={selectedBrandForProducts}
+          activeCategory={selectedCategoryForProducts}
+          onOpenDatasheet={handleOpenDatasheet}
+          initialSearchQuery={searchQueryForProducts}
+        />
       </div>
 
-      {/* MAIN ROUTED VIEW - ORTA ALAN TERTEMİZ OKUNABİLİR ZEMİN */}
-      <main className="flex-1 w-full max-w-full overflow-x-hidden bg-white shadow-sm">
+      {/* MAIN ROUTED VIEW (z-10 ile üstte) */}
+      <main className="flex-1 w-full max-w-full overflow-x-hidden relative z-10">
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
@@ -222,16 +228,9 @@ export default function App() {
         )}
       </main>
 
-      {/* CORPORATE FOOTER - ALT KISIM KOYU BORDO KURUMSAL ÇERÇEVE */}
-      <div 
-        className="w-full text-white relative z-20 shadow-inner"
-        style={{ 
-          backgroundImage: 'linear-gradient(90deg, #600000 0%, #8B0000 50%, #a30000 100%)'
-        }}
-      >
-        <div className="w-full max-w-7xl mx-auto">
-          <Footer onNavigate={handleNavigate} lang={lang} />
-        </div>
+      {/* CORPORATE FOOTER (z-10 ile üstte) */}
+      <div className="relative z-10">
+        <Footer onNavigate={handleNavigate} lang={lang} />
       </div>
 
       {/* DATASHEET MODAL */}
