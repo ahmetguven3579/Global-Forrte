@@ -145,9 +145,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
     <div className="pt-28 sm:pt-32 lg:pt-36 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white/80 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-red-700 shadow-sm backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#b71818]/40 bg-white/85 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7a0000] shadow-sm backdrop-blur-sm">
             <span>{isTr ? 'Global Forte Hizmetleri' : 'Global Forte Services'}</span>
-            <span className="text-red-400">•</span>
+            <span className="text-[#c91818]">•</span>
             <span>{isTr ? 'Hizmetler' : 'Services'}</span>
           </div>
 
@@ -168,17 +168,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
             return (
               <div
                 key={srv.id}
-                className="rounded-[28px] border border-red-200 bg-[#fffdfd] p-5 sm:p-7 lg:p-8 shadow-[0_18px_50px_rgba(120,0,0,0.08)]"
+                className="rounded-[28px] border border-[#b71818]/35 bg-[#fffaf9] p-5 sm:p-7 lg:p-8 shadow-[0_18px_50px_rgba(120,0,0,0.08)]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   <div className="lg:col-span-7">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-800 shadow-inner ring-1 ring-red-200">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7a0000] text-white shadow-inner ring-1 ring-[#a00d0d]">
                         <IconComp className="h-5 w-5" />
                       </div>
 
                       <div>
-                        <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-red-800">
+                        <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-[#7a0000]">
                           0{idx + 1}. {isTr ? srv.badgeTr : srv.badgeEn}
                         </span>
                         <h2 className="mt-2 text-xl sm:text-2xl font-bold text-slate-900">
@@ -192,14 +192,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
                     </p>
                   </div>
 
-                  <div className="lg:col-span-5 rounded-2xl border border-red-200 bg-gradient-to-br from-red-50 via-[#fff9f9] to-white p-5 shadow-sm">
+                  <div className="lg:col-span-5 rounded-2xl border border-[#b71818]/35 bg-gradient-to-br from-[#fff1f1] via-[#fffdfd] to-white p-5 shadow-sm">
                     <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-900">
                       {isTr ? 'Hizmet Kapsamı & Özellikler' : 'Service Scope & Deliverables'}
                     </h3>
                     <ul className="space-y-3 text-sm text-slate-700">
                       {(isTr ? srv.highlightsTr : srv.highlightsEn).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-red-700" />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#7a0000]" />
                           <span className="leading-relaxed">{item}</span>
                         </li>
                       ))}
@@ -211,13 +211,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
           })}
         </div>
 
-        <div className="rounded-[28px] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-7 sm:p-8 lg:p-10 text-white shadow-[0_18px_55px_rgba(15,23,42,0.25)]">
+        <div className="rounded-[28px] bg-gradient-to-r from-[#4a0000] via-[#7a0000] to-[#9d1010] p-7 sm:p-8 lg:p-10 text-white shadow-[0_18px_55px_rgba(15,23,42,0.25)]">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <h3 className="text-2xl font-bold tracking-tight">
                 {isTr ? 'Kurumsal Projeleriniz İçin Uzman Kadromuzla Görüşün' : 'Consult with Our Systems Engineering Team'}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+              <p className="mt-3 text-sm leading-relaxed text-red-50/90">
                 {isTr
                   ? 'İhtiyaçlarınıza özel danışmanlık, sistem entegrasyonu ve SLA teklifi almak için doğrudan İstanbul merkezimizle irtibata geçebilirsiniz.'
                   : 'Contact our Istanbul headquarters to discuss customized consultancy, systems integration, or technical support agreements tailored to your business priorities.'}
@@ -227,7 +227,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
             <div className="flex flex-col sm:flex-row items-stretch gap-3">
               <button
                 onClick={() => onNavigate('contact')}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-red-700 px-5 py-3 text-sm font-bold text-white transition-all hover:bg-red-800 shadow-md"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#7a0000] transition-all hover:bg-red-50 shadow-md"
               >
                 <span>{isTr ? 'Hemen İletişime Geçin' : 'Contact Us Today'}</span>
                 <ArrowRight className="h-4 w-4" />
@@ -235,7 +235,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
 
               <button
                 onClick={() => onNavigate('products')}
-                className="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-slate-800 px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-700"
+                className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-[#5f0000] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#4a0000]"
               >
                 {isTr ? 'Ürün Kataloğu' : 'Products Catalog'}
               </button>
