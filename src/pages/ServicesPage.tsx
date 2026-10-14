@@ -168,17 +168,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
             return (
               <div
                 key={srv.id}
-                className="rounded-[28px] border border-red-100 bg-white/85 p-5 sm:p-7 lg:p-8 shadow-[0_18px_50px_rgba(120,0,0,0.08)] backdrop-blur-sm"
+                className="rounded-[28px] border border-red-200 bg-[#fffdfd] p-5 sm:p-7 lg:p-8 shadow-[0_18px_50px_rgba(120,0,0,0.08)]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                   <div className="lg:col-span-7">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-700 shadow-inner">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-100 text-red-800 shadow-inner ring-1 ring-red-200">
                         <IconComp className="h-5 w-5" />
                       </div>
 
                       <div>
-                        <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-red-700">
+                        <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-red-800">
                           0{idx + 1}. {isTr ? srv.badgeTr : srv.badgeEn}
                         </span>
                         <h2 className="mt-2 text-xl sm:text-2xl font-bold text-slate-900">
@@ -187,20 +187,20 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onNavigate, lang }) 
                       </div>
                     </div>
 
-                    <p className="text-sm leading-relaxed text-slate-700">
+                    <p className="text-sm leading-relaxed text-slate-800">
                       {isTr ? srv.descTr : srv.descEn}
                     </p>
                   </div>
 
-                  <div className="lg:col-span-5 rounded-2xl border border-red-100 bg-gradient-to-br from-red-50 via-white to-white p-5 shadow-sm">
-                    <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-700">
+                  <div className="lg:col-span-5 rounded-2xl border border-red-200 bg-gradient-to-br from-red-50 via-[#fff9f9] to-white p-5 shadow-sm">
+                    <h3 className="mb-3 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-900">
                       {isTr ? 'Hizmet Kapsamı & Özellikler' : 'Service Scope & Deliverables'}
                     </h3>
                     <ul className="space-y-3 text-sm text-slate-700">
                       {(isTr ? srv.highlightsTr : srv.highlightsEn).map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-red-700" />
-                          <span>{item}</span>
+                          <span className="leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
