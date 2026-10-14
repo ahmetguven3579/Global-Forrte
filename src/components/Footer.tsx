@@ -1,6 +1,5 @@
 import React from 'react';
-import { Logo } from './Logo.tsx';
-import { MapPin, Phone, Mail, Award, ShieldCheck, Printer } from 'lucide-react';
+import { MapPin, Phone, Mail, Printer } from 'lucide-react';
 import { Lang, PageId } from '../types/index.ts';
 
 interface FooterProps {
@@ -17,36 +16,31 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
   };
 
   return (
-    <footer 
-      className="border-t border-red-900/30 text-white text-xs relative z-10 shadow-2xl"
-      style={{
-        backgroundImage: 'linear-gradient(135deg, #7F0000 0%, #B22222 50%, #4A0404 100%)'
-      }}
-    >
+    <footer className="animated-gradient-bg border-t border-red-900/30 text-white text-xs relative z-10 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         {/* Main Footer Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2 space-y-4">
             <div className="text-xl font-extrabold tracking-wider font-mono">
-              <span className="text-white">Global</span> <span className="text-red-300">Forte</span>
+              <span className="text-white">Global</span> <span className="text-red-200">Forte</span>
             </div>
-            <p className="text-slate-200 text-xs leading-relaxed max-w-sm pt-2 font-medium">
+            <p className="text-slate-100 text-xs leading-relaxed max-w-sm pt-2 font-medium">
               {isTr
                 ? 'Global Forte Bilişim Teknolojileri ve Danışmanlık Ltd.; donanımsal güvenlik modülleri (HSM), yüksek güvenlikli ağ şifreleme, akıllı video yönetimi (VMS), taktiksel kablosuz ağlar ve kurumsal sistem entegrasyonunda uzmanlaşmış bağımsız bir teknoloji sağlayıcısıdır.'
                 : 'Global Forte Information Technologies & Consultancy Ltd. is an independent technology provider specializing in hardware security modules (HSM), network cryptography, intelligent VMS, tactical wireless infrastructure, and systems integration.'}
             </p>
             <div className="text-[11px] text-red-200 font-bold pt-1">
-              {isTr ? 'İstanbul Genel Merkezi · 2001’den Bugüne' : 'Istanbul Headquarters · Established 2001'}
+              {isTr ? 'İstanbul Genel Merkez · 2001’den Bugüne' : 'Istanbul Headquarters · Established 2001'}
             </div>
           </div>
 
           {/* Quick Pages */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-red-300 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-red-200 mb-4">
               {isTr ? 'Sayfalar' : 'Navigation'}
             </h4>
-            <ul className="space-y-2 font-medium text-slate-200">
+            <ul className="space-y-2 font-medium text-slate-100">
               <li>
                 <button
                   onClick={() => handleNav('home')}
@@ -108,10 +102,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Partner Brands */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-red-300 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-red-200 mb-4">
               {isTr ? 'Yetkili Markalar' : 'Authorized Brands'}
             </h4>
-            <ul className="space-y-2 font-medium text-slate-200">
+            <ul className="space-y-2 font-medium text-slate-100">
               <li>
                 <button
                   onClick={() => handleNav('products', 'safenet')}
@@ -165,24 +159,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
 
           {/* Contact Details */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-red-300 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-red-200 mb-4">
               {isTr ? 'Genel Merkez İletişim' : 'Headquarters Contact'}
             </h4>
-            <ul className="space-y-3 font-medium text-slate-200">
+            <ul className="space-y-3 font-medium text-slate-100">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-red-300 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-red-200 shrink-0 mt-0.5" />
                 <span>Mecidiyeköy Mah. Başaran Sok. No: 2, Şişli 34387 İstanbul</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-red-300 shrink-0" />
+                <Phone className="w-4 h-4 text-red-200 shrink-0" />
                 <span className="font-mono text-white font-bold">+90 (212) 279 2440</span>
               </li>
               <li className="flex items-center gap-2">
-                <Printer className="w-4 h-4 text-red-300 shrink-0" />
+                <Printer className="w-4 h-4 text-red-200 shrink-0" />
                 <span className="font-mono text-white font-bold">+90 (212) 279 0503</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-red-300 shrink-0" />
+                <Mail className="w-4 h-4 text-red-200 shrink-0" />
                 <span className="font-mono text-white font-bold">info@globalforte.com</span>
               </li>
               <li className="pt-1">
@@ -198,18 +192,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, lang }) => {
         </div>
 
         {/* Quality Certifications & Copyright */}
-        <div className="pt-8 border-t border-red-800/50 text-center space-y-3">
-          <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-200 font-medium">
+        <div className="pt-8 border-t border-red-700/40 text-center space-y-3">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-[11px] text-slate-100 font-medium">
             <span className="font-mono">ISO 9001</span>
             <span aria-hidden="true">·</span>
-            <span className="text-red-300 font-bold font-mono">TSE-HYB</span>
+            <span className="text-red-200 font-bold font-mono">TSE-HYB</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono">ISO 10002</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono">ISO 27001</span>
           </div>
 
-          <div className="text-xs font-semibold text-red-200">
+          <div className="text-xs font-semibold text-red-100">
             Global Forte © 2001- 2026 All Rights Reserved
           </div>
         </div>
