@@ -59,7 +59,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
   ];
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-slate-50 min-h-screen">
+    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12">
@@ -73,16 +73,16 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
               ? 'Yetkili Teknoloji Markaları ve Kalite Belgelerimiz'
               : 'Authorized Technology Partners & Quality Certifications'}
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
+          <p className="text-slate-700 text-sm sm:text-base mt-2 leading-relaxed font-medium">
             {isTr
               ? 'Global Forte, 2001’den bu yana dünyanın önde gelen siber güvenlik, kablosuz iletişim ve video gözetim üreticilerinin yetkili temsilcisi ve çözüm ortağıdır.'
               : 'Global Forte has been an authorized distributor, integrator, and engineering partner for world-class cybersecurity and wireless communications leaders since 2001.'}
           </p>
         </div>
 
-        {/* 1. Official Certifications Grid with Real Certificates */}
+        {/* 1. Official Certifications Grid - Buzlu Cam */}
         <div className="mb-16">
-          <div className="flex items-center gap-2 border-b border-slate-200 pb-3 mb-6">
+          <div className="flex items-center gap-2 border-b border-slate-200/60 pb-3 mb-6">
             <Award className="w-5 h-5 text-red-700" />
             <h2 className="text-lg font-bold text-slate-900">
               {isTr ? 'Resmi Kalite ve Güvenlik Sertifikalarımız' : 'Official Quality & Security Accreditations'}
@@ -93,7 +93,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
             {certifications.map((c) => (
               <div
                 key={c.code}
-                className="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs flex flex-col justify-between"
+                className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -114,12 +114,12 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
                     {isTr ? c.titleTr : c.titleEn}
                   </h3>
 
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-700 leading-relaxed font-medium">
                     {isTr ? c.descTr : c.descEn}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
+                <div className="pt-4 mt-4 border-t border-slate-200/40 flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                   <span>{isTr ? 'Aktif & Denetlenmiş Belge' : 'Active & Verified'}</span>
                 </div>
@@ -128,16 +128,16 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
           </div>
         </div>
 
-        {/* 2. Partner Brands: Clean & Direct, No Category Groupings */}
+        {/* 2. Partner Brands - Buzlu Cam */}
         <div>
-          <div className="flex items-center justify-between border-b border-slate-200 pb-3 mb-6">
+          <div className="flex items-center justify-between border-b border-slate-200/60 pb-3 mb-6">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-red-700" />
               <h2 className="text-lg font-bold text-slate-900">
                 {isTr ? 'Yetkili Markalarımız' : 'Authorized Technology Brands'}
               </h2>
             </div>
-            <span className="text-xs text-slate-500 font-mono font-semibold">
+            <span className="text-xs text-slate-600 font-mono font-semibold">
               7 {isTr ? 'Lider Marka · 140+ Ürün' : 'Leading Brands · 140+ Products'}
             </span>
           </div>
@@ -146,14 +146,14 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
             {PARTNER_BRANDS.map((brand) => (
               <div
                 key={brand.id}
-                className="bg-white border border-slate-200 hover:border-slate-300 rounded-2xl p-6 flex flex-col justify-between shadow-2xs hover:shadow-xs transition-all group"
+                className="bg-white/60 backdrop-blur-md border border-white/80 hover:border-red-300 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-all group"
               >
                 <div>
                   {/* Brand Header with Real Logo */}
-                  <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-100">
+                  <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200/60">
                     <div className="flex items-center gap-3">
                       {brand.logoUrl && (
-                        <div className="h-10 w-24 flex items-center justify-start bg-slate-50 p-1.5 rounded-lg border border-slate-200">
+                        <div className="h-10 w-24 flex items-center justify-start bg-white/80 p-1.5 rounded-lg border border-slate-200/60">
                           <img
                             src={brand.logoUrl}
                             alt={brand.name}
@@ -173,7 +173,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
                     {(() => {
                       const brandProducts = PRODUCTS_CATALOG.filter((p) => p.brandId === brand.id);
                       return (
-                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-red-50 text-red-700 rounded-full shrink-0">
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 bg-red-500/10 text-red-700 rounded-full shrink-0 border border-red-200/40">
                           {brandProducts.length} {isTr ? 'Ürün' : 'Products'}
                         </span>
                       );
@@ -184,7 +184,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
                     {isTr ? brand.taglineTr : brand.taglineEn}
                   </span>
 
-                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4 font-medium">
                     {isTr ? brand.descriptionTr : brand.descriptionEn}
                   </p>
 
@@ -196,14 +196,14 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
                     if (previewProducts.length === 0) return null;
                     return (
                       <div className="mb-4">
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1.5">
                           {isTr ? 'Örnek Donanım Fotoğrafları:' : 'Hardware Photography:'}
                         </span>
                         <div className="grid grid-cols-4 gap-2">
                           {previewProducts.map((p) => (
                             <div
                               key={p.id}
-                              className="bg-white border border-slate-200 rounded-lg p-1 h-14 flex items-center justify-center overflow-hidden shadow-2xs group/img"
+                              className="bg-white/80 border border-slate-200/80 rounded-lg p-1 h-14 flex items-center justify-center overflow-hidden shadow-2xs group/img"
                               title={p.name}
                             >
                               <img
@@ -218,7 +218,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
                     );
                   })()}
 
-                  <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] text-slate-700 mb-5">
+                  <div className="bg-white/60 p-3 rounded-xl border border-slate-200/60 text-[11px] text-slate-800 mb-5 font-medium">
                     <span className="font-bold text-slate-900 block mb-0.5">
                       {isTr ? 'Uzmanlık Alanı:' : 'Core Specialty:'}
                     </span>
@@ -228,7 +228,7 @@ export const PartnersPage: React.FC<PartnersPageProps> = ({ onSelectBrand, lang 
 
                 <button
                   onClick={() => onSelectBrand(brand.id)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold text-slate-800 hover:text-white bg-slate-50 hover:bg-red-700 border border-slate-200 hover:border-red-700 rounded-xl transition-all cursor-pointer shadow-2xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-3 text-xs font-semibold text-slate-800 hover:text-white bg-white/80 hover:bg-red-700 border border-slate-200/80 hover:border-red-700 rounded-xl transition-all cursor-pointer shadow-xs"
                 >
                   <span>{brand.name} {isTr ? 'Ürünlerini Görüntüle' : 'Products'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
