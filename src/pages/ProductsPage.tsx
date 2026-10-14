@@ -226,14 +226,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
     : filteredProducts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   return (
-    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-slate-50 min-h-screen">
+    <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Title Banner */}
         <div className="max-w-3xl mb-6 sm:mb-8">
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-red-700 mb-2">
             <span>{isTr ? 'Kapsamlı Ürün Kataloğu' : 'Comprehensive Product Catalogue'}</span>
             <span aria-hidden="true">·</span>
-            <span className="font-mono font-bold bg-red-100 text-red-800 px-2 py-0.5 rounded">
+            <span className="font-mono font-bold bg-red-500/10 text-red-800 px-2 py-0.5 rounded border border-red-200/40">
               {PRODUCTS_CATALOG.length} {isTr ? 'Onaylı Ürün' : 'Certified Products'}
             </span>
             <span aria-hidden="true">·</span>
@@ -242,20 +242,20 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             {isTr ? 'Tüm Teknoloji Ürünleri & Teknik Föyler' : 'All Technology Products & Technical Datasheets'}
           </h1>
-          <p className="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+          <p className="text-slate-700 text-xs sm:text-sm mt-2 leading-relaxed font-medium">
             {isTr
               ? 'Global Forte tarafından Türkiye ve bölgede temsil edilen SafeNet (Thales), Redline Communications, Digifort, Fortress Technologies, SPYRUS, Cryptomathic ve Global Forte ürün ailesinin tamamı (140+ ürün). Gerçek donanım fotoğrafları, teknik parametreleri ve resmi mühendislik föyleri (datasheet).'
               : 'Complete portfolio of over 140 technology products represented by Global Forte across SafeNet, Redline, Digifort, Fortress, SPYRUS, Cryptomathic, and Global Forte with official hardware photography, engineering specifications, and downloadable datasheets.'}
           </p>
         </div>
 
-        {/* 1. TOP CATEGORY CARDS / TABS: "kategorilere ayır yukarıda oradan girelim" */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-2xs mb-6">
-          <div className="flex items-center justify-between gap-3 mb-3 pb-2 border-b border-slate-100">
+        {/* 1. TOP CATEGORY CARDS / TABS - Buzlu Cam */}
+        <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-4 sm:p-5 shadow-sm mb-6">
+          <div className="flex items-center justify-between gap-3 mb-3 pb-2 border-b border-slate-200/60">
             <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
               <Layers className="w-4 h-4 text-red-700" />
               <span>{isTr ? 'Ürün Kategorileri' : 'Product Categories'}</span>
-              <span className="text-slate-400 font-normal hidden sm:inline">
+              <span className="text-slate-500 font-normal hidden sm:inline">
                 ({isTr ? 'Kategoriye göre filtreleyin' : 'Filter by technical domain'})
               </span>
             </div>
@@ -281,7 +281,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                   className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                     isCatSel
                       ? 'bg-red-700 text-white border-red-700 shadow-xs'
-                      : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200 hover:border-slate-300'
+                      : 'bg-white/70 hover:bg-white/90 text-slate-800 border-white/80 hover:border-slate-300'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-1 mb-2">
@@ -294,7 +294,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                       className={`text-[10px] font-mono font-bold px-1.5 py-0.2 rounded ${
                         isCatSel
                           ? 'bg-red-950 text-white'
-                          : 'bg-white text-slate-700 border border-slate-200'
+                          : 'bg-white/90 text-slate-700 border border-slate-200/60'
                       }`}
                     >
                       {count}
@@ -309,8 +309,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         </div>
 
-        {/* 2. BRANDS & SEARCH TOOLBAR: "marka kategorileri kaldır markalar kalsın sadece" */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-2xs mb-8 space-y-4">
+        {/* 2. BRANDS & SEARCH TOOLBAR - Buzlu Cam */}
+        <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-4 sm:p-5 shadow-sm mb-8 space-y-4">
           {/* Top Search Bar */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             <div className="relative flex-1">
@@ -324,18 +324,18 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 }
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-red-600 focus:bg-white transition-colors"
+                className="w-full bg-white/75 border border-slate-200/80 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-red-600 focus:bg-white transition-colors"
               />
             </div>
 
             <div className="flex flex-wrap items-center gap-2 justify-between sm:justify-end">
-              <div className="text-xs text-slate-500 font-semibold whitespace-nowrap">
+              <div className="text-xs text-slate-600 font-semibold whitespace-nowrap">
                 <span className="text-red-700 font-bold">{filteredProducts.length}</span> /{' '}
                 {PRODUCTS_CATALOG.length} {isTr ? 'ürün' : 'products'}
               </div>
 
               {/* Page size toggle */}
-              <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg border border-slate-200">
+              <div className="flex items-center gap-1 bg-white/60 p-0.5 rounded-lg border border-slate-200/60">
                 {[24, 48, 96].map((num) => (
                   <button
                     key={num}
@@ -346,8 +346,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                     }}
                     className={`px-2 py-1 text-[11px] font-mono font-bold rounded-md transition-colors cursor-pointer ${
                       !showAllProducts && pageSize === num
-                        ? 'bg-red-700 text-white shadow-2xs'
-                        : 'text-slate-600 hover:text-slate-900'
+                        ? 'bg-red-700 text-white shadow-xs'
+                        : 'text-slate-700 hover:text-slate-900'
                     }`}
                   >
                     {num}
@@ -357,8 +357,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                   onClick={() => setShowAllProducts(true)}
                   className={`px-2 py-1 text-[11px] font-bold rounded-md transition-colors cursor-pointer ${
                     showAllProducts
-                      ? 'bg-slate-900 text-white shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900'
+                      ? 'bg-slate-900 text-white shadow-xs'
+                      : 'text-slate-700 hover:text-slate-900'
                   }`}
                 >
                   {isTr ? 'Tümü (138)' : 'All (138)'}
@@ -367,14 +367,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
             </div>
           </div>
 
-          {/* Pure Brand Row: No groupings, just the 7 authorized brands directly */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-1 border-t border-slate-100">
+          {/* Pure Brand Row */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-1 border-t border-slate-200/60">
             <button
               onClick={() => handleBrandChange('all')}
               className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                 selectedBrand === 'all'
-                  ? 'bg-slate-900 text-white shadow-2xs font-bold'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-slate-900 text-white shadow-xs font-bold'
+                  : 'text-slate-700 hover:text-slate-900 hover:bg-white/60'
               }`}
             >
               <span>{isTr ? 'Tüm Markalar' : 'All Brands'}</span>
@@ -382,7 +382,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
                   selectedBrand === 'all'
                     ? 'bg-slate-700 text-white'
-                    : 'bg-slate-200 text-slate-700'
+                    : 'bg-white/80 text-slate-700 border border-slate-200/60'
                 }`}
               >
                 {getBrandCount('all')}
@@ -398,8 +398,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                   onClick={() => handleBrandChange(b.id)}
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                     isSel
-                      ? 'bg-red-700 text-white shadow-2xs font-bold'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                      ? 'bg-red-700 text-white shadow-xs font-bold'
+                      : 'text-slate-700 hover:text-slate-900 hover:bg-white/60'
                   }`}
                 >
                   <span>{b.name}</span>
@@ -407,7 +407,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                     className={`text-[10px] px-1.5 py-0.2 rounded font-mono font-bold ${
                       isSel
                         ? 'bg-red-950 text-white'
-                        : 'bg-slate-200 text-slate-700'
+                        : 'bg-white/80 text-slate-700 border border-slate-200/60'
                     }`}
                   >
                     {count}
@@ -418,12 +418,12 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         </div>
 
-        {/* Selected Brand Hero Callout */}
+        {/* Selected Brand Hero Callout - Buzlu Cam */}
         {currentBrandInfo && selectedBrand !== 'all' && (
-          <div className="bg-white border border-slate-200 rounded-2xl p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs">
+          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
             <div className="flex items-start gap-4">
               {currentBrandInfo.logoUrl && (
-                <div className="p-2 bg-slate-50 border border-slate-200 rounded-xl shrink-0 hidden sm:block">
+                <div className="p-2 bg-white/80 border border-slate-200/60 rounded-xl shrink-0 hidden sm:block">
                   <img
                     src={currentBrandInfo.logoUrl}
                     alt={currentBrandInfo.name}
@@ -437,11 +437,11 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 </span>
                 <div className="flex items-center gap-2 mt-0.5">
                   <h2 className="text-xl font-bold text-slate-900">{currentBrandInfo.name}</h2>
-                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-red-100 text-red-800">
+                  <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-800 border border-red-200/40">
                     {getBrandCount(currentBrandInfo.id)} {isTr ? 'Ürün' : 'Products'}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 mt-1 max-w-3xl leading-relaxed">
+                <p className="text-xs text-slate-700 mt-1 max-w-3xl leading-relaxed font-medium">
                   {isTr ? currentBrandInfo.descriptionTr : currentBrandInfo.descriptionEn}
                 </p>
               </div>
@@ -452,7 +452,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 setSelectedCategory('all');
                 setCurrentPage(1);
               }}
-              className="text-xs font-semibold text-slate-500 hover:text-red-700 whitespace-nowrap cursor-pointer"
+              className="text-xs font-semibold text-slate-600 hover:text-red-700 whitespace-nowrap cursor-pointer"
             >
               {isTr ? 'Filtreleri Sıfırla' : 'Reset Filters'}
             </button>
@@ -461,8 +461,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 
         {/* Products Grid */}
         {displayedProducts.length === 0 ? (
-          <div className="bg-white border border-slate-200 rounded-2xl p-12 text-center max-w-md mx-auto">
-            <div className="w-12 h-12 rounded-full bg-slate-100 text-slate-500 mx-auto flex items-center justify-center mb-3">
+          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-12 text-center max-w-md mx-auto shadow-sm">
+            <div className="w-12 h-12 rounded-full bg-white/80 text-slate-600 mx-auto flex items-center justify-center mb-3 border border-slate-200/60">
               {didYouMeanResult ? (
                 <HelpCircle className="w-6 h-6 text-red-600" />
               ) : (
@@ -473,8 +473,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               {isTr ? 'Aramanıza Uygun Ürün Bulunamadı' : 'No Products Matched'}
             </h3>
             {didYouMeanResult ? (
-              <div className="my-3 p-3 bg-red-50/70 border border-red-200 rounded-xl">
-                <p className="text-xs text-slate-700">
+              <div className="my-3 p-3 bg-red-500/10 border border-red-200/60 rounded-xl">
+                <p className="text-xs text-slate-800 font-medium">
                   {isTr ? 'Bunu mu demek istediniz:' : 'Did you mean:'}{' '}
                   <strong className="text-red-700 font-bold">{didYouMeanResult.suggestedTerm}</strong>
                   {' '}({didYouMeanResult.brand})
@@ -482,14 +482,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 <button
                   type="button"
                   onClick={() => setSearchQuery(didYouMeanResult.suggestedTerm)}
-                  className="mt-2.5 px-3 py-1.5 bg-red-700 hover:bg-red-800 text-white rounded-lg text-xs font-semibold cursor-pointer shadow-2xs inline-flex items-center gap-1.5 transition-colors"
+                  className="mt-2.5 px-3 py-1.5 bg-red-700 hover:bg-red-800 text-white rounded-lg text-xs font-semibold cursor-pointer shadow-xs inline-flex items-center gap-1.5 transition-colors"
                 >
                   <span>{isTr ? `"${didYouMeanResult.suggestedTerm}" Olarak Ara` : `Search for "${didYouMeanResult.suggestedTerm}"`}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             ) : (
-              <p className="text-xs text-slate-500 mb-4">
+              <p className="text-xs text-slate-600 mb-4 font-medium">
                 {isTr
                   ? 'Lütfen arama terimlerinizi değiştirin veya filtreleri sıfırlayın.'
                   : 'Please try different keywords or reset your filters.'}
@@ -502,7 +502,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 setSearchQuery('');
                 setCurrentPage(1);
               }}
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold transition-colors cursor-pointer"
+              className="px-4 py-2 bg-slate-900 hover:bg-slate-950 text-white rounded-lg text-xs font-semibold transition-colors cursor-pointer shadow-xs"
             >
               {isTr ? 'Tüm Filtreleri Temizle' : 'Clear All Filters'}
             </button>
@@ -513,7 +513,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               <div
                 key={product.id}
                 onClick={() => onOpenDatasheet(product)}
-                className="bg-white border border-slate-200 hover:border-red-300 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                className="bg-white/60 backdrop-blur-md border border-white/80 hover:border-red-300 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   {/* Equipment Visual or Real Photo */}
@@ -526,7 +526,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                     {/* Brand Name & Part Number */}
                     <div className="flex items-center justify-between text-[11px] mb-2">
                       <span className="font-bold text-red-700">{product.brandName}</span>
-                      <span className="text-[10px] font-mono text-slate-400 font-semibold bg-slate-100 px-1.5 py-0.2 rounded">
+                      <span className="text-[10px] font-mono text-slate-500 font-semibold bg-white/80 px-1.5 py-0.2 rounded border border-slate-200/60">
                         {product.datasheetContent.partNumber}
                       </span>
                     </div>
@@ -538,11 +538,11 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 
                     {/* Category Label & Photo indicator */}
                     <div className="flex items-center gap-1.5 flex-wrap mb-3">
-                      <span className="inline-block text-[10px] font-semibold text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">
+                      <span className="inline-block text-[10px] font-semibold text-slate-700 bg-white/80 px-2 py-0.5 rounded border border-slate-200/60">
                         {isTr ? product.categoryTr : product.categoryEn}
                       </span>
                       {product.imageUrl && (
-                        <span className="inline-flex items-center gap-1 text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200/50">
+                        <span className="inline-flex items-center gap-1 text-[9px] font-semibold text-emerald-700 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-200/50">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                           {isTr ? 'Donanım Fotoğrafı' : 'Hardware Photo'}
                         </span>
@@ -550,18 +550,18 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                     </div>
 
                     {/* Summary */}
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">
+                    <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed mb-4 font-medium">
                       {isTr ? product.summaryTr : product.summaryEn}
                     </p>
 
                     {/* Quick Specs 2-item table */}
-                    <div className="space-y-1.5 text-[11px] bg-slate-50 p-2.5 rounded-xl border border-slate-100 mb-4">
+                    <div className="space-y-1.5 text-[11px] bg-white/70 p-2.5 rounded-xl border border-slate-200/60 mb-4 font-medium">
                       {product.specs.slice(0, 2).map((s, idx) => (
                         <div key={idx} className="flex justify-between items-center gap-2">
-                          <span className="text-slate-500 truncate">
+                          <span className="text-slate-600 truncate">
                             {isTr ? s.labelTr : s.labelEn}:
                           </span>
-                          <span className="font-semibold text-slate-800 text-right truncate font-mono text-[10px]">
+                          <span className="font-semibold text-slate-900 text-right truncate font-mono text-[10px]">
                             {s.val}
                           </span>
                         </div>
@@ -573,7 +573,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                       {product.compliance.slice(0, 3).map((comp, idx) => (
                         <span
                           key={idx}
-                          className="text-[9px] font-mono font-bold bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded"
+                          className="text-[9px] font-mono font-bold bg-white/80 text-slate-700 px-1.5 py-0.2 rounded border border-slate-200/60"
                         >
                           {comp}
                         </span>
@@ -582,11 +582,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                   </div>
                 </div>
 
-                {/* Card Action Button: Datasheet Download */}
+                {/* Card Action Button */}
                 <div className="p-5 pt-0">
                   <button
-                    onClick={() => onOpenDatasheet(product)}
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-slate-900 hover:text-white bg-slate-100 hover:bg-red-700 border border-slate-200 hover:border-red-700 rounded-xl transition-all shadow-2xs group-hover:border-red-600 cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onOpenDatasheet(product);
+                    }}
+                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-slate-900 hover:text-white bg-white/80 hover:bg-red-700 border border-slate-200 hover:border-red-700 rounded-xl transition-all shadow-xs group-hover:border-red-600 cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5 text-red-700 group-hover:text-white transition-colors" />
                     <span>{isTr ? 'Datasheet İndir' : 'Download Datasheet'}</span>
@@ -597,10 +600,10 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         )}
 
-        {/* Pagination Controls */}
+        {/* Pagination Controls - Buzlu Cam */}
         {!showAllProducts && totalPages > 1 && (
-          <div className="flex items-center justify-between border-t border-slate-200 pt-6">
-            <div className="text-xs text-slate-500">
+          <div className="flex items-center justify-between border-t border-slate-200/60 pt-6">
+            <div className="text-xs text-slate-600 font-medium">
               {isTr ? (
                 <>
                   Toplam <span className="font-bold text-slate-900">{filteredProducts.length}</span> üründen{' '}
@@ -626,20 +629,20 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                className="p-2 rounded-lg border border-slate-200/80 bg-white/60 backdrop-blur-md text-slate-700 hover:bg-white/90 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-xs"
                 aria-label="Önceki Sayfa"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
 
-              <div className="text-xs font-mono font-bold text-slate-700 px-3 py-1 bg-white border border-slate-200 rounded-lg">
+              <div className="text-xs font-mono font-bold text-slate-800 px-3 py-1 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-lg shadow-xs">
                 {currentPage} / {totalPages}
               </div>
 
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                className="p-2 rounded-lg border border-slate-200/80 bg-white/60 backdrop-blur-md text-slate-700 hover:bg-white/90 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-xs"
                 aria-label="Sonraki Sayfa"
               >
                 <ChevronRight className="w-4 h-4" />
