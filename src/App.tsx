@@ -96,7 +96,7 @@ export default function App() {
     if (searchFilter !== undefined) {
       setSearchQueryForProducts(searchFilter);
     } else if (page !== 'products') {
-      setSelectedCategoryForProducts('');
+      setSearchQueryForProducts('');
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -153,7 +153,7 @@ export default function App() {
         </div>
       )}
 
-      {/* TOP HEADER - SORUNSUZ ÇALIŞAN HALİ */}
+      {/* TOP HEADER */}
       <Header
         activePage={activePage}
         onNavigate={handleNavigate}
@@ -165,30 +165,8 @@ export default function App() {
         initialSearchQuery={searchQueryForProducts}
       />
 
-      {/* MAIN ROUTED VIEW */}
+      {/* MAIN ROUTED VIEW (Ekstra şerit yok, tertemiz orijinal hali) */}
       <main className="flex-1 w-full max-w-full overflow-x-hidden">
-        
-        {/* ANA SAYFANIN EN ÜSTÜNE KURUMSAL KIRMIZI/BORDO KARŞILAMA BANNER'I */}
-        {activePage === 'home' && (
-          <div 
-            className="w-full py-16 px-6 text-white text-center shadow-lg relative overflow-hidden mb-8"
-            style={{ 
-              backgroundImage: 'linear-gradient(135deg, #8B0000 0%, #e30613 60%, #b30000 100%)'
-            }}
-          >
-            <div className="max-w-4xl mx-auto relative z-10">
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-wide mb-4 drop-shadow-md">
-                Global Forte Teknoloji Çözümleri
-              </h2>
-              <p className="text-white/90 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-                Uçtan uca siber güvenlik, kurumsal donanım mimarileri ve katma değerli bilişim danışmanlığı.
-              </p>
-            </div>
-            {/* Arka plan şık dekoratif parıltı */}
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-          </div>
-        )}
-
         {activePage === 'home' && (
           <HomePage
             onNavigate={handleNavigate}
