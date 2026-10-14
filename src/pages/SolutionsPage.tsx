@@ -18,7 +18,6 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
   return (
     <div className="pt-36 sm:pt-40 lg:pt-44 pb-24 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="max-w-3xl mb-14">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-red-700 mb-2">
             <span>{isTr ? 'Kurumsal Çözümler' : 'Enterprise Solutions'}</span>
@@ -37,10 +36,8 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           </p>
         </div>
 
-        {/* 4 Deep-dive Solutions - Buzlu Cam */}
         <div className="space-y-12">
-          {/* 1. Network Security & Cryptography */}
-          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+          <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-3xl p-8 sm:p-10 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-red-500/10 text-red-700 rounded-2xl border border-red-200/40">
                 <ShieldCheck className="w-8 h-8" />
@@ -57,30 +54,30 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
             <p className="text-sm text-slate-700 leading-relaxed max-w-4xl mb-6 font-medium">
               {isTr
-                ? 'Fortress FC-X hat içi ağ şifreleyicilerimiz, SafeNet Luna Network HSM donanımlarımız ve SPYRUS kriptografik çiplerimiz ile kurumlar arası veri iletişimini Katman-2 Ethernet ve Katman-3 IPsec seviyesinde tam hat hızında şifreliyoruz. FIPS 140-2 Seviye 3 onaylı fiziksel müdahale korumalı donanımlarımız, sıfır gecikme ile finansal işlemlerin ve devlet sırrı niteliğindeki bilgilerin güvenliğini sağlar.'
-                : 'Protecting classified inter-branch data communications at line-rate with Fortress FC-X inline encryptors, SafeNet Luna Network HSMs, and SPYRUS cryptographic tokens. Meeting FIPS 140-2 Level 3 tamper-resistant hardware standards with sub-microsecond latency.'}
+                ? 'Fortress FC-X hat içi ağ şifreleyicilerimiz, SafeNet Luna Network HSM donanımlarımız ve SPYRUS kriptografik çiplerimiz ile kurumlar arası veri iletişimini Katman-2 Ethernet ve IP üzerinden kesintisiz ve yüksek güvenlikle koruruz.'
+                : 'Protecting classified inter-branch data communications at line-rate with Fortress FC-X inline encryptors, SafeNet Luna Network HSMs, and SPYRUS cryptographic tokens, while preserving high-throughput performance and strict security controls.'}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6 text-xs text-slate-800 font-medium">
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">10 Gbps Hat Hızı</span>
                 <span>%0 paket ek yükü ile sıfır gecikmeli şifreleme</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">FIPS 140-2 Seviye 3</span>
                 <span>Aktif fiziksel müdahale korumalı kasa mimarisi</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">NSA Suite B</span>
                 <span>ECDSA, ECDH, AES-256-GCM ve SHA-384</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Luna HSM Entegrasyonu</span>
                 <span>Kök anahtar ve PKI sertifikalarının donanımda izolasyonu</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-200/60">
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#ececec]">
               <button
                 onClick={() => onNavigateToProducts('fortress')}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 cursor-pointer"
@@ -91,8 +88,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
 
-          {/* 2. Digifort Video Surveillance */}
-          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+          <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-3xl p-8 sm:p-10 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-red-500/10 text-red-700 rounded-2xl border border-red-200/40">
                 <Video className="w-8 h-8" />
@@ -109,30 +105,30 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
             <p className="text-sm text-slate-700 leading-relaxed max-w-4xl mb-6 font-medium">
               {isTr
-                ? 'Global Forte, Digifort’un Türkiye ve bölgedeki yetkili çözüm ortağıdır. Binlerce IP kameranın eşzamanlı izlendiği, sunucu arızalarında 2 saniye içinde kesintisiz yedek sunucuya geçen (failover) VMS mimarileri kuruyoruz. Digifort Neural LPR motorumuz 250 km/s hızdaki araç plakalarını yüksek doğrulukla tanırken; yapay zeka video analitik modüllerimiz petabaytlarca arşivde saniyeler içinde şüpheli eşya ve şahıs tespiti yapar.'
-                : 'Authorized enterprise integration partner for Digifort. Engineering distributed VMS clusters capable of managing thousands of video streams with automated under-2-second failover. Digifort Neural LPR identifies license plates at speeds up to 250 km/h, while forensic analytics search petabytes in seconds.'}
+                ? 'Global Forte, Digifort’un Türkiye ve bölgedeki yetkili çözüm ortağıdır. Binlerce IP kameranın eşzamanlı izlendiği, sunucu arızalarında 2 saniye içinde kesintisiz otomatik devreye alma ve olay bazlı arama çözümleri sunarız.'
+                : 'Authorized enterprise integration partner for Digifort. Engineering distributed VMS clusters capable of managing thousands of video streams with automated failover and rapid forensic event search.'}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6 text-xs text-slate-800 font-medium">
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Sınırsız Kamera</span>
                 <span>Dağıtık çok sunuculu kurumsal VMS kümesi</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">250 km/s PTS Hızı</span>
                 <span>Otoban ve şehir içi araç/renk/marka tespiti</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Adli Video Arama</span>
                 <span>24 saatlik kaydı 3 saniyede filtreleyen derin öğrenme</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Mobil & Video Wall</span>
                 <span>Saha devriyeleri ve komuta merkezleri için tam kontrol</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-200/60">
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#ececec]">
               <button
                 onClick={() => onNavigateToProducts('digifort')}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 cursor-pointer"
@@ -143,8 +139,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
 
-          {/* 3. Broadband Wireless & Tactical Mesh */}
-          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+          <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-3xl p-8 sm:p-10 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-red-500/10 text-red-700 rounded-2xl border border-red-200/40">
                 <Wifi className="w-8 h-8" />
@@ -161,30 +156,30 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
             <p className="text-sm text-slate-700 leading-relaxed max-w-4xl mb-6 font-medium">
               {isTr
-                ? 'Kablo kazı maliyetlerinin ve coğrafi engellerin olduğu arazilerde fiber optik hızında kablosuz omurgalar kuruyoruz. Redline Communications RDL-3000 XP sistemleri ile 50 km mesafeye kadar noktadan çok noktaya geniş bant video aktarımı sağlarken; hareketli askeri konvoylar için Fortress kablosuz mesh düğümleri ile kendi kendini kuran ve onaran telsiz ağları inşa ediyoruz. Türk Emniyeti MOBESE kablosuz ağında kanıtlanmış güvenilirlik.'
-                : 'Delivering carrier-grade wireless backhauls where optical fiber trenching is prohibitive. Redline RDL-3000 XP connects points up to 50 km with high-capacity throughput, while Fortress tactical mesh nodes maintain self-healing communications between moving armored convoys. Proven in Turkish National Police municipal wireless deployments.'}
+                ? 'Kablo kazı maliyetlerinin ve coğrafi engellerin olduğu arazilerde fiber optik hızında kablosuz omurgalar kuruyoruz. Redline Communications RDL-3000 XP sistemleri ile 50 km menzile kadar yüksek kapasite taşıyabiliriz.'
+                : 'Delivering carrier-grade wireless backhauls where optical fiber trenching is prohibitive. Redline RDL-3000 XP systems provide high-capacity transport at distances up to 50 km.'}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6 text-xs text-slate-800 font-medium">
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">50+ km Menzil</span>
                 <span>Taşıyıcı sınıfı noktadan çok noktaya geniş bant</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Otomatik Takip Anteni</span>
                 <span>RAS-Elite hareketli araçlarda kesintisiz link</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">-40°C ile +75°C Dayanım</span>
                 <span>IP67 su geçirmez ve MIL-STD-810G askeri kasa</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Kendi Kendini Onaran Mesh</span>
                 <span>Düğüm kaybında milisaniyeler içinde alternatif rota</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-200/60">
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#ececec]">
               <button
                 onClick={() => onNavigateToProducts('redline')}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 cursor-pointer"
@@ -195,8 +190,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
 
-          {/* 4. IT Governance & Consulting */}
-          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl p-8 sm:p-10 shadow-sm">
+          <div className="bg-[#fcfbfb] border border-[#eeeeee] rounded-3xl p-8 sm:p-10 shadow-sm">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-red-500/10 text-red-700 rounded-2xl border border-red-200/40">
                 <Server className="w-8 h-8" />
@@ -213,30 +207,30 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
             <p className="text-sm text-slate-700 leading-relaxed max-w-4xl mb-6 font-medium">
               {isTr
-                ? 'Global Forte kurumsal danışmanlık birimi; CIO ve CISO’lara bağımsız mimari tasarım, ERP sistem seçimi ve tedarikçi denetimi, ITIL v4 ve COBIT 2019 süreç tasarımı ve ISO 27001 Bilgi Güvenliği Yönetim Sistemi kurulumu sağlar. Ayrıca uluslararası yüksek teknoloji tedarikinde şartname (RFP) hazırlığından sözleşme yönetimine kadar uçtan uca destek verir.'
-                : 'Guiding C-level executives through vendor-neutral enterprise architecture blueprints, ERP selection and vendor audit, ITIL and COBIT governance design, and ISO 27001 ISMS certification. Supporting international high-tech procurement programs from RFP specification to SLA compliance.'}
+                ? 'Global Forte kurumsal danışmanlık birimi; CIO ve CISO’lara bağımsız mimari tasarım, ERP sistem seçimi ve tedarikçi denetimi, ITIL v4 ve COBIT 2019 süreç tasarımıyla danışmanlık sunar.'
+                : 'Guiding C-level executives through vendor-neutral enterprise architecture blueprints, ERP selection and vendor audit, ITIL and COBIT governance design, and ISO 27001 ISMS certification support.'}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6 text-xs text-slate-800 font-medium">
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">TOGAF 10 & Zachman</span>
                 <span>Kurumsal hedef mimari tasarımı ve yol haritası</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">ISO 27001 BGYS</span>
                 <span>Bilgi güvenliği yönetim sistemi kurulum ve denetimi</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">Tedarikçi Denetimi</span>
                 <span>Bağımsız RFP şartname oluşturma ve teklif analizi</span>
               </div>
-              <div className="bg-white/80 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="bg-white/80 p-3 rounded-xl border border-[#eeeeee] shadow-sm">
                 <span className="font-bold block text-red-700 mb-0.5">CKMS Entegrasyonu</span>
                 <span>Cryptomathic ile merkezi kriptografik anahtar yönetimi</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-200/60">
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#ececec]">
               <button
                 onClick={onOpenContact}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-red-700 hover:text-red-800 cursor-pointer"
