@@ -57,3 +57,58 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   letter-spacing: -0.015em;
 }
+
+/* ---------- Global glass-card system for products / partners ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: rgba(127, 29, 29, 0.25);
+}
+
+.product-card,
+.partner-card,
+.certification-card {
+  overflow: hidden;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card::before,
+.partner-card::before,
+.certification-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(127, 29, 29, 0.9), rgba(239, 68, 68, 0.8), rgba(127, 29, 29, 0.9));
+  opacity: 0.88;
+}
+
+.product-card .group-hover\:text-red-700,
+.partner-card .group-hover\:text-red-700 {
+  transition: color 0.18s ease;
+}
+
+.product-card:hover .group-hover\:text-red-700,
+.partner-card:hover .group-hover\:text-red-700 {
+  color: #b91c1c;
+}
+
+/* optional utility for card content spacing */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
